@@ -24,5 +24,46 @@ namespace Enigma
         {
             InitializeComponent();
         }
+
+        private void R3G_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void R2G_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void R1G_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void R3D_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void R2D_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void R1D_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void RS_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("AAAA");
+
+        }
+
+        private void OK_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

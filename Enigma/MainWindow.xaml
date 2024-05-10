@@ -5,8 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Enigma"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Enigma" Height="450" Width="800">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="R3S" Content="A" HorizontalAlignment="Left" Height="40" Margin="333,75,0,0" VerticalAlignment="Top" Width="19" Click="RS_Click"/>
+        <Button x:Name="R3G" Content="B" HorizontalAlignment="Left" Height="40" Margin="333,32,0,0" VerticalAlignment="Top" Width="19" Click="R3G_Click"/>
+        <Button x:Name="R3D" Content="Z" HorizontalAlignment="Left" Height="40" Margin="333,118,0,0" VerticalAlignment="Top" Width="19" RenderTransformOrigin="1.053,2.301" Click="R3D_Click"/>
+        <Button x:Name="R2S" Content="A" HorizontalAlignment="Left" Height="40" Margin="389,75,0,0" VerticalAlignment="Top" Width="19" Click="RS_Click"/>
+        <Button x:Name="R2G" Content="B" HorizontalAlignment="Left" Height="40" Margin="389,32,0,0" VerticalAlignment="Top" Width="19" Click="R2G_Click"/>
+        <Button x:Name="R2D" Content="Z" HorizontalAlignment="Left" Height="40" Margin="389,118,0,0" VerticalAlignment="Top" Width="19" RenderTransformOrigin="1.053,2.301" Click="R2D_Click"/>
+        <Button x:Name="R1S" Content="A" HorizontalAlignment="Left" Height="40" Margin="439,75,0,0" VerticalAlignment="Top" Width="19" Click="RS_Click"/>
+        <Button x:Name="R1G" Content="B" HorizontalAlignment="Left" Height="40" Margin="439,32,0,0" VerticalAlignment="Top" Width="19" Click="R1G_Click"/>
+        <Button x:Name="R1D" Content="Z" HorizontalAlignment="Left" Height="40" Margin="439,118,0,0" VerticalAlignment="Top" Width="19" RenderTransformOrigin="1.053,2.301" Click="R1D_Click"/>
+        <GroupBox Header="Podešavanja" Margin="10,23,545,308" RenderTransformOrigin="0.498,0.511"/>
+        <ComboBox x:Name="cbx_treciRotor" HorizontalAlignment="Left" Height="11" Margin="216,52,0,0" VerticalAlignment="Top" Width="39" RenderTransformOrigin="0.509,2.185" SelectionChanged="ComboBox_SelectionChanged"/>
+        <ComboBox x:Name="cbx_drugiRotor" HorizontalAlignment="Left" Height="11" Margin="172,52,0,0" VerticalAlignment="Top" Width="35" RenderTransformOrigin="0.509,2.185" SelectionChanged="ComboBox_SelectionChanged"/>
+        <ComboBox x:Name="cbx_prviRotor" HorizontalAlignment="Left" Height="11" Margin="123,52,0,0" VerticalAlignment="Top" Width="39" RenderTransformOrigin="0.509,2.185" SelectionChanged="ComboBox_SelectionChanged"/>
+        <Button x:Name="Ponisti" Content="Poništi" HorizontalAlignment="Left" Margin="73,100,0,0" VerticalAlignment="Top" Click="Button_Click" Width="47"/>
+        <Button x:Name="OK" Content="OK" HorizontalAlignment="Left" Margin="132,100,0,0" VerticalAlignment="Top" Click="OK_Click" Width="36"/>
+
     </Grid>
 </Window>
