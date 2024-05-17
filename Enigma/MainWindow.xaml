@@ -20,10 +20,10 @@
         <Button x:Name="R1G" Content="B" HorizontalAlignment="Left" Height="40" Margin="439,32,0,0" VerticalAlignment="Top" Width="19" Click="R1G_Click"/>
         <Button x:Name="R1D" Content="Z" HorizontalAlignment="Left" Height="40" Margin="439,118,0,0" VerticalAlignment="Top" Width="19" RenderTransformOrigin="1.053,2.301" Click="R1D_Click"/>
         <GroupBox Header="Podešavanja" Margin="10,23,545,308" RenderTransformOrigin="0.498,0.511"/>
-        <ComboBox x:Name="cbx_treciRotor" HorizontalAlignment="Left" Height="11" Margin="216,52,0,0" VerticalAlignment="Top" Width="39" RenderTransformOrigin="0.509,2.185" SelectionChanged="ComboBox_SelectionChanged"/>
-        <ComboBox x:Name="cbx_drugiRotor" HorizontalAlignment="Left" Height="11" Margin="172,52,0,0" VerticalAlignment="Top" Width="35" RenderTransformOrigin="0.509,2.185" SelectionChanged="ComboBox_SelectionChanged"/>
-        <ComboBox x:Name="cbx_prviRotor" HorizontalAlignment="Left" Height="11" Margin="123,52,0,0" VerticalAlignment="Top" Width="39" RenderTransformOrigin="0.509,2.185" SelectionChanged="ComboBox_SelectionChanged"/>
-        <Button x:Name="Ponisti" Content="Poništi" HorizontalAlignment="Left" Margin="73,100,0,0" VerticalAlignment="Top" Click="Button_Click" Width="47"/>
+        <ComboBox x:Name="cbx_treciRotor" HorizontalAlignment="Left" Height="11" Margin="216,52,0,0" VerticalAlignment="Top" Width="39" RenderTransformOrigin="0.509,2.185"/>
+        <ComboBox x:Name="cbx_drugiRotor" HorizontalAlignment="Left" Height="11" Margin="172,52,0,0" VerticalAlignment="Top" Width="35" RenderTransformOrigin="0.509,2.185"/>
+        <ComboBox x:Name="cbx_prviRotor" HorizontalAlignment="Left" Height="11" Margin="123,52,0,0" VerticalAlignment="Top" Width="39" RenderTransformOrigin="0.509,2.185"/>
+        <Button x:Name="Ponisti" Content="Poništi" HorizontalAlignment="Left" Margin="73,100,0,0" VerticalAlignment="Top" Click="RS_Click" Width="47"/>
         <Button x:Name="OK" Content="OK" HorizontalAlignment="Left" Margin="132,100,0,0" VerticalAlignment="Top" Click="OK_Click" Width="36"/>
 
     </Grid>
