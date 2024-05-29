@@ -18,7 +18,7 @@ namespace Enigma
         public void KlikSlovo(char s)
         {
             //provera da li je vec povezano
-            int i1 = s - 97;
+            int i1 = s - 'A';
             if (Izlazna[i1] != '.') // vec je povezan
             {
                 int i2 = Izlazna[i1] - 'A';// index drugog slova u paru
@@ -35,8 +35,8 @@ namespace Enigma
         }
         private void SpojiSlova(char s1, char s2)
         {
-            int i1 = s1 - 97;
-            int i2 = s2 - 97;
+            int i1 = s1 - 'A';
+            int i2 = s2 - 'A';
             Izlazna[i1] = s2;
             Izlazna[i2] = s1;
             kliknuto = '-';
@@ -44,7 +44,7 @@ namespace Enigma
 
         public char Sifruj(char x, bool smer = false)
         {
-            throw new NotImplementedException();
+            return Izlazna[x - 'A'];
         }
     }
 }
