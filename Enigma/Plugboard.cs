@@ -21,7 +21,7 @@ namespace Enigma
             int i1 = s - 97;
             if (Izlazna[i1] != '.') // vec je povezan
             {
-                int i2 = Izlazna[i1] - 97;// index drugog slova u paru
+                int i2 = Izlazna[i1] - 'A';// index drugog slova u paru
                 Izlazna[i2] = '.';
                 Izlazna[i1] = '.';
             }
