@@ -1,6 +1,6 @@
 ﻿using System;
 
-public class Plugboard : IUlazIzlaz
+public class Plugboard : ISifrovanje
 {
     public char[] Izlazna { get; private set; }
     char kliknuto; // slovo koje je kliknuto
