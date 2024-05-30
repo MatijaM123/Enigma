@@ -9,11 +9,11 @@
     <ScrollViewer HorizontalScrollBarVisibility="Auto">
         <StackPanel>
             <DockPanel>
-                <Rectangle Height="80"></Rectangle>
+                <Rectangle Height="50"></Rectangle>
             </DockPanel>
-            <DockPanel Width="102">
+            <DockPanel Width="140" >
                 <Rectangle Width="15"></Rectangle>
-                <Button x:Name="R3G" Content="B" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="19" >
+                <Button x:Name="R3G" Content="B" Height="45" Width="20" >
                     <Button.Background>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                             <GradientStop Color="Black"/>
@@ -24,7 +24,7 @@
                 </Button>
 
                 <Rectangle Width="15"></Rectangle>
-                <Button x:Name="R33" Content="B" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="19" >
+                <Button x:Name="R33" Content="B" HorizontalAlignment="Left" Height="45" VerticalAlignment="Top" Width="20" >
                     <Button.Background>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                             <GradientStop Color="Black"/>
@@ -35,7 +35,7 @@
                 </Button>
 
                 <Rectangle Width="15"></Rectangle>
-                <Button x:Name="R34" Content="B" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="19" >
+                <Button x:Name="R34" Content="B" HorizontalAlignment="Left" Height="45" VerticalAlignment="Top" Width="20" >
                     <Button.Background>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                             <GradientStop Color="Black"/>
@@ -46,21 +46,21 @@
                 </Button>
             </DockPanel>
 
-            <DockPanel Width="102">
+            <DockPanel Width="140">
 
                 <Rectangle Width="15"></Rectangle>
-                <Button x:Name="R3S" Content="A" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="19"  Background="White"/>
+                <Button x:Name="R3S" Content="A" HorizontalAlignment="Left" Height="45" VerticalAlignment="Top" Width="20"  Background="White"/>
 
                 <Rectangle Width="15"></Rectangle>
-                <Button x:Name="R36" Content="A" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="19"  Background="White"/>
+                <Button x:Name="R36" Content="A" HorizontalAlignment="Left" Height="45" VerticalAlignment="Top" Width="20"  Background="White"/>
 
                 <Rectangle Width="15"></Rectangle>
-                <Button x:Name="R37" Content="A" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="19"  Background="White"/>
+                <Button x:Name="R37" Content="A" HorizontalAlignment="Left" Height="45" VerticalAlignment="Top" Width="20"  Background="White"/>
             </DockPanel>
 
-            <DockPanel Width="102">
+            <DockPanel Width="140">
                 <Rectangle Width="15"></Rectangle>
-                <Button x:Name="R3D" Content="Z" HorizontalAlignment="Left" Height="40"  VerticalAlignment="Top" Width="19" RenderTransformOrigin="1.053,2.301" >
+                <Button x:Name="R3D" Content="Z" HorizontalAlignment="Left" Height="45"  VerticalAlignment="Top" Width="20" RenderTransformOrigin="1.053,2.301" >
                     <Button.Background>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                             <GradientStop Color="Black" Offset="1"/>
@@ -71,7 +71,7 @@
                 </Button>
 
                 <Rectangle Width="15"></Rectangle>
-                <Button x:Name="R31" Content="Z" HorizontalAlignment="Left" Height="40"  VerticalAlignment="Top" Width="19" RenderTransformOrigin="1.053,2.301" >
+                <Button x:Name="R31" Content="Z" HorizontalAlignment="Left" Height="45"  VerticalAlignment="Top" Width="20" RenderTransformOrigin="1.053,2.301" >
                     <Button.Background>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                             <GradientStop Color="Black" Offset="1"/>
@@ -82,7 +82,7 @@
                 </Button>
 
                 <Rectangle Width="15"></Rectangle>
-                <Button x:Name="R3" Content="Z" HorizontalAlignment="Left" Height="40"  VerticalAlignment="Top" Width="19" RenderTransformOrigin="1.053,2.301" >
+                <Button x:Name="R3" Content="Z" HorizontalAlignment="Left" Height="45"  VerticalAlignment="Top" Width="20" RenderTransformOrigin="1.053,2.301" >
                     <Button.Background>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                             <GradientStop Color="Black" Offset="1"/>
@@ -94,6 +94,275 @@
             </DockPanel>
 
 
+            <Rectangle Height="50"></Rectangle>
+            <DockPanel Height="40" HorizontalAlignment="Center">
+
+                <Viewbox Width="40" Height="40">
+                    <Grid Width="20" Height="20">
+                        <Ellipse x:Name="Qs" Stroke="Black" />
+                        <TextBlock HorizontalAlignment="Center" Text="Q" TextAlignment="Center" VerticalAlignment="Center"/>
+                    </Grid>
+                </Viewbox>
+                
+                <Rectangle Width="5"></Rectangle>
+                <Viewbox Width="40" Height="40">
+                    <Grid Width="20" Height="20">
+                        <Ellipse x:Name="Ws" Stroke="Black" />
+                        <TextBlock HorizontalAlignment="Center" Text="W" TextAlignment="Center" VerticalAlignment="Center"/>
+                    </Grid>
+                </Viewbox>
+                <Rectangle Width="5"></Rectangle>
+
+                <Rectangle Width="5"></Rectangle>
+                <Viewbox Width="40" Height="40">
+                    <Grid Width="20" Height="20">
+                        <Ellipse x:Name="Es" Stroke="Black" />
+                        <TextBlock HorizontalAlignment="Center" Text="E" TextAlignment="Center" VerticalAlignment="Center"/>
+                    </Grid>
+                </Viewbox>
+                <Rectangle Width="5"></Rectangle>
+
+                <Rectangle Width="5"></Rectangle>
+                <Viewbox Width="40" Height="40">
+                    <Grid Width="20" Height="20">
+                        <Ellipse x:Name="Rs" Stroke="Black" />
+                        <TextBlock HorizontalAlignment="Center" Text="R" TextAlignment="Center" VerticalAlignment="Center"/>
+                    </Grid>
+                </Viewbox>
+                <Rectangle Width="5"></Rectangle>
+
+                <Rectangle Width="5"></Rectangle>
+                <Viewbox Width="40" Height="40">
+                    <Grid Width="20" Height="20">
+                        <Ellipse x:Name="Ts" Stroke="Black" />
+                        <TextBlock HorizontalAlignment="Center" Text="T" TextAlignment="Center" VerticalAlignment="Center"/>
+                    </Grid>
+                </Viewbox>
+                <Rectangle Width="5"></Rectangle>
+
+                <Rectangle Width="5"></Rectangle>
+                <Viewbox Width="40" Height="40">
+                    <Grid Width="20" Height="20">
+                        <Ellipse x:Name="Zs" Stroke="Black" />
+                        <TextBlock HorizontalAlignment="Center" Text="Z" TextAlignment="Center" VerticalAlignment="Center"/>
+                    </Grid>
+                </Viewbox>
+                <Rectangle Width="5"></Rectangle>
+
+                <Rectangle Width="5"></Rectangle>
+                <Viewbox Width="40" Height="40">
+                    <Grid Width="20" Height="20">
+                        <Ellipse x:Name="Us" Stroke="Black" />
+                        <TextBlock HorizontalAlignment="Center" Text="U" TextAlignment="Center" VerticalAlignment="Center"/>
+                    </Grid>
+                </Viewbox>
+                <Rectangle Width="5"></Rectangle>
+
+                <Rectangle Width="5"></Rectangle>
+                <Viewbox Width="40" Height="40">
+                    <Grid Width="20" Height="20">
+                        <Ellipse x:Name="Is" Stroke="Black" />
+                        <TextBlock HorizontalAlignment="Center" Text="I" TextAlignment="Center" VerticalAlignment="Center"/>
+                    </Grid>
+                </Viewbox>
+                <Rectangle Width="5"></Rectangle>
+
+                <Rectangle Width="5"></Rectangle>
+                <Viewbox Width="40" Height="40">
+                    <Grid Width="20" Height="20">
+                        <Ellipse x:Name="Os" Stroke="Black" />
+                        <TextBlock HorizontalAlignment="Center" Text="O" TextAlignment="Center" VerticalAlignment="Center"/>
+                    </Grid>
+                </Viewbox>
+                <Rectangle Width="5"></Rectangle>
+            </DockPanel>
+            <DockPanel Height="40" HorizontalAlignment="Center">
+
+                <Viewbox Width="40" Height="40">
+                    <Grid Width="20" Height="20">
+                        <Ellipse x:Name="As" Stroke="Black" />
+                        <TextBlock HorizontalAlignment="Center" Text="A" TextAlignment="Center" VerticalAlignment="Center"/>
+                    </Grid>
+                </Viewbox>
+
+                <Rectangle Width="5"></Rectangle>
+                <Viewbox Width="40" Height="40">
+                    <Grid Width="20" Height="20">
+                        <Ellipse x:Name="Ss" Stroke="Black" />
+                        <TextBlock HorizontalAlignment="Center" Text="S" TextAlignment="Center" VerticalAlignment="Center"/>
+                    </Grid>
+                </Viewbox>
+                <Rectangle Width="5"></Rectangle>
+
+                <Rectangle Width="5"></Rectangle>
+                <Viewbox Width="40" Height="40">
+                    <Grid Width="20" Height="20">
+                        <Ellipse x:Name="Ds" Stroke="Black" />
+                        <TextBlock HorizontalAlignment="Center" Text="D" TextAlignment="Center" VerticalAlignment="Center"/>
+                    </Grid>
+                </Viewbox>
+                <Rectangle Width="5"></Rectangle>
+
+                <Rectangle Width="5"></Rectangle>
+                <Viewbox Width="40" Height="40">
+                    <Grid Width="20" Height="20">
+                        <Ellipse x:Name="Fs" Stroke="Black" />
+                        <TextBlock HorizontalAlignment="Center" Text="F" TextAlignment="Center" VerticalAlignment="Center"/>
+                    </Grid>
+                </Viewbox>
+                <Rectangle Width="5"></Rectangle>
+
+                <Rectangle Width="5"></Rectangle>
+                <Viewbox Width="40" Height="40">
+                    <Grid Width="20" Height="20">
+                        <Ellipse x:Name="Gs" Stroke="Black" />
+                        <TextBlock HorizontalAlignment="Center" Text="G" TextAlignment="Center" VerticalAlignment="Center"/>
+                    </Grid>
+                </Viewbox>
+                <Rectangle Width="5"></Rectangle>
+
+                <Rectangle Width="5"></Rectangle>
+                <Viewbox Width="40" Height="40">
+                    <Grid Width="20" Height="20">
+                        <Ellipse x:Name="Hs" Stroke="Black" />
+                        <TextBlock HorizontalAlignment="Center" Text="H" TextAlignment="Center" VerticalAlignment="Center"/>
+                    </Grid>
+                </Viewbox>
+                <Rectangle Width="5"></Rectangle>
+
+                <Rectangle Width="5"></Rectangle>
+                <Viewbox Width="40" Height="40">
+                    <Grid Width="20" Height="20">
+                        <Ellipse x:Name="Js" Stroke="Black" />
+                        <TextBlock HorizontalAlignment="Center" Text="J" TextAlignment="Center" VerticalAlignment="Center"/>
+                    </Grid>
+                </Viewbox>
+                <Rectangle Width="5"></Rectangle>
+
+                <Rectangle Width="5"></Rectangle>
+                <Viewbox Width="40" Height="40">
+                    <Grid Width="20" Height="20">
+                        <Ellipse x:Name="Ks" Stroke="Black" />
+                        <TextBlock HorizontalAlignment="Center" Text="K" TextAlignment="Center" VerticalAlignment="Center"/>
+                    </Grid>
+                </Viewbox>
+                <Rectangle Width="5"></Rectangle>
+            </DockPanel>
+            <DockPanel Height="40" HorizontalAlignment="Center">
+                <Viewbox Width="40" Height="40">
+                    <Grid Width="20" Height="20">
+                        <Ellipse x:Name="Ps" Stroke="Black" />
+                        <TextBlock HorizontalAlignment="Center" Text="P" TextAlignment="Center" VerticalAlignment="Center"/>
+                    </Grid>
+                </Viewbox>
+
+                <Rectangle Width="5"></Rectangle>
+                <Viewbox Width="40" Height="40">
+                    <Grid Width="20" Height="20">
+                        <Ellipse x:Name="Ys" Stroke="Black" />
+                        <TextBlock HorizontalAlignment="Center" Text="Y" TextAlignment="Center" VerticalAlignment="Center"/>
+                    </Grid>
+                </Viewbox>
+                <Rectangle Width="5"></Rectangle>
+
+                <Rectangle Width="5"></Rectangle>
+                <Viewbox Width="40" Height="40">
+                    <Grid Width="20" Height="20">
+                        <Ellipse x:Name="Xs" Stroke="Black" />
+                        <TextBlock HorizontalAlignment="Center" Text="X" TextAlignment="Center" VerticalAlignment="Center"/>
+                    </Grid>
+                </Viewbox>
+                <Rectangle Width="5"></Rectangle>
+
+                <Rectangle Width="5"></Rectangle>
+                <Viewbox Width="40" Height="40">
+                    <Grid Width="20" Height="20">
+                        <Ellipse x:Name="Cs" Stroke="Black" />
+                        <TextBlock HorizontalAlignment="Center" Text="C" TextAlignment="Center" VerticalAlignment="Center"/>
+                    </Grid>
+                </Viewbox>
+                <Rectangle Width="5"></Rectangle>
+
+                <Rectangle Width="5"></Rectangle>
+                <Viewbox Width="40" Height="40">
+                    <Grid Width="20" Height="20">
+                        <Ellipse x:Name="Vs" Stroke="Black" />
+                        <TextBlock HorizontalAlignment="Center" Text="V" TextAlignment="Center" VerticalAlignment="Center"/>
+                    </Grid>
+                </Viewbox>
+                <Rectangle Width="5"></Rectangle>
+
+                <Rectangle Width="5"></Rectangle>
+                <Viewbox Width="40" Height="40">
+                    <Grid Width="20" Height="20">
+                        <Ellipse x:Name="Bs" Stroke="Black" />
+                        <TextBlock HorizontalAlignment="Center" Text="B" TextAlignment="Center" VerticalAlignment="Center"/>
+                    </Grid>
+                </Viewbox>
+                <Rectangle Width="5"></Rectangle>
+
+                <Rectangle Width="5"></Rectangle>
+                <Viewbox Width="40" Height="40">
+                    <Grid Width="20" Height="20">
+                        <Ellipse x:Name="Ns" Stroke="Black" />
+                        <TextBlock HorizontalAlignment="Center" Text="N" TextAlignment="Center" VerticalAlignment="Center"/>
+                    </Grid>
+                </Viewbox>
+                <Rectangle Width="5"></Rectangle>
+
+                <Rectangle Width="5"></Rectangle>
+                <Viewbox Width="40" Height="40">
+                    <Grid Width="20" Height="20">
+                        <Ellipse x:Name="Ms" Stroke="Black" />
+                        <TextBlock HorizontalAlignment="Center" Text="M" TextAlignment="Center" VerticalAlignment="Center"/>
+                    </Grid>
+                </Viewbox>
+                <Rectangle Width="5"></Rectangle>
+
+                <Rectangle Width="5"></Rectangle>
+                <Viewbox Width="40" Height="40">
+                    <Grid Width="20" Height="20">
+                        <Ellipse x:Name="Ls" Stroke="Black" />
+                        <TextBlock HorizontalAlignment="Center" Text="L" TextAlignment="Center" VerticalAlignment="Center"/>
+                    </Grid>
+                </Viewbox>
+                <Rectangle Width="5"></Rectangle>
+            </DockPanel>
+            <Rectangle Height="50"></Rectangle>
+            <DockPanel HorizontalAlignment="Center">
+                <Button Content="Q" Width="40" Height="40" Margin="0,0,10,0"/>
+                <Button Content="W" Width="40" Height="40" Margin="0,0,10,0"/>
+                <Button Content="E" Width="40" Height="40" Margin="0,0,10,0"/>
+                <Button Content="R" Width="40" Height="40" Margin="0,0,10,0"/>
+                <Button Content="T" Width="40" Height="40" Margin="0,0,10,0"/>
+                <Button Content="Z" Width="40" Height="40" Margin="0,0,10,0"/>
+                <Button Content="U" Width="40" Height="40" Margin="0,0,10,0"/>
+                <Button Content="I" Width="40" Height="40" Margin="0,0,10,0"/>
+                <Button Content="O" Width="40" Height="40"/>
+            </DockPanel>
+            <Rectangle Height="10"></Rectangle>
+            <DockPanel HorizontalAlignment="Center">
+                <Button Content="A" Width="40" Height="40" Margin="0,0,10,0"/>
+                <Button Content="S" Width="40" Height="40" Margin="0,0,10,0"/>
+                <Button Content="D" Width="40" Height="40" Margin="0,0,10,0"/>
+                <Button Content="F" Width="40" Height="40" Margin="0,0,10,0"/>
+                <Button Content="G" Width="40" Height="40" Margin="0,0,10,0"/>
+                <Button Content="H" Width="40" Height="40" Margin="0,0,10,0"/>
+                <Button Content="J" Width="40" Height="40" Margin="0,0,10,0"/>
+                <Button Content="K" Width="40" Height="40"/>
+            </DockPanel>
+            <Rectangle Height="10"></Rectangle>
+            <DockPanel HorizontalAlignment="Center">
+                <Button Content="P" Width="40" Height="40" Margin="0,0,10,0"/>
+                <Button Content="Y" Width="40" Height="40" Margin="0,0,10,0"/>
+                <Button Content="X" Width="40" Height="40" Margin="0,0,10,0"/>
+                <Button Content="C" Width="40" Height="40" Margin="0,0,10,0"/>
+                <Button Content="V" Width="40" Height="40" Margin="0,0,10,0"/>
+                <Button Content="B" Width="40" Height="40" Margin="0,0,10,0"/>
+                <Button Content="N" Width="40" Height="40" Margin="0,0,10,0"/>
+                <Button Content="M" Width="40" Height="40" Margin="0,0,10,0"/>
+                <Button Content="L" Width="40" Height="40"/>
+            </DockPanel>
             <Rectangle Height="50"></Rectangle>
             <DockPanel HorizontalAlignment="Center">
                 <Button Content="Q" Width="30" Height="30" Margin="0,0,10,0"/>
@@ -129,76 +398,7 @@
                 <Button Content="M" Width="30" Height="30" Margin="0,0,10,0"/>
                 <Button Content="L" Width="30" Height="30"/>
             </DockPanel>
-            <Rectangle Height="50"></Rectangle>
-            <DockPanel HorizontalAlignment="Center">
-                <Button Content="Q" Width="30" Height="30" Margin="0,0,10,0"/>
-                <Button Content="W" Width="30" Height="30" Margin="0,0,10,0"/>
-                <Button Content="E" Width="30" Height="30" Margin="0,0,10,0"/>
-                <Button Content="R" Width="30" Height="30" Margin="0,0,10,0"/>
-                <Button Content="T" Width="30" Height="30" Margin="0,0,10,0"/>
-                <Button Content="Z" Width="30" Height="30" Margin="0,0,10,0"/>
-                <Button Content="U" Width="30" Height="30" Margin="0,0,10,0"/>
-                <Button Content="I" Width="30" Height="30" Margin="0,0,10,0"/>
-                <Button Content="O" Width="30" Height="30"/>
-            </DockPanel>
-            <Rectangle Height="10"></Rectangle>
-            <DockPanel HorizontalAlignment="Center">
-                <Button Content="A" Width="30" Height="30" Margin="0,0,10,0"/>
-                <Button Content="S" Width="30" Height="30" Margin="0,0,10,0"/>
-                <Button Content="D" Width="30" Height="30" Margin="0,0,10,0"/>
-                <Button Content="F" Width="30" Height="30" Margin="0,0,10,0"/>
-                <Button Content="G" Width="30" Height="30" Margin="0,0,10,0"/>
-                <Button Content="H" Width="30" Height="30" Margin="0,0,10,0"/>
-                <Button Content="J" Width="30" Height="30" Margin="0,0,10,0"/>
-                <Button Content="K" Width="30" Height="30"/>
-            </DockPanel>
-            <Rectangle Height="10"></Rectangle>
-            <DockPanel HorizontalAlignment="Center">
-                <Button Content="P" Width="30" Height="30" Margin="0,0,10,0"/>
-                <Button Content="Y" Width="30" Height="30" Margin="0,0,10,0"/>
-                <Button Content="X" Width="30" Height="30" Margin="0,0,10,0"/>
-                <Button Content="C" Width="30" Height="30" Margin="0,0,10,0"/>
-                <Button Content="V" Width="30" Height="30" Margin="0,0,10,0"/>
-                <Button Content="B" Width="30" Height="30" Margin="0,0,10,0"/>
-                <Button Content="N" Width="30" Height="30" Margin="0,0,10,0"/>
-                <Button Content="M" Width="30" Height="30" Margin="0,0,10,0"/>
-                <Button Content="L" Width="30" Height="30"/>
-            </DockPanel>
-            <Rectangle Height="50"></Rectangle>
-            <DockPanel HorizontalAlignment="Center">
-                <Button Content="Q" Width="30" Height="30" Margin="0,0,10,0"/>
-                <Button Content="W" Width="30" Height="30" Margin="0,0,10,0"/>
-                <Button Content="E" Width="30" Height="30" Margin="0,0,10,0"/>
-                <Button Content="R" Width="30" Height="30" Margin="0,0,10,0"/>
-                <Button Content="T" Width="30" Height="30" Margin="0,0,10,0"/>
-                <Button Content="Z" Width="30" Height="30" Margin="0,0,10,0"/>
-                <Button Content="U" Width="30" Height="30" Margin="0,0,10,0"/>
-                <Button Content="I" Width="30" Height="30" Margin="0,0,10,0"/>
-                <Button Content="O" Width="30" Height="30"/>
-            </DockPanel>
-            <Rectangle Height="10"></Rectangle>
-            <DockPanel HorizontalAlignment="Center">
-                <Button Content="A" Width="30" Height="30" Margin="0,0,10,0"/>
-                <Button Content="S" Width="30" Height="30" Margin="0,0,10,0"/>
-                <Button Content="D" Width="30" Height="30" Margin="0,0,10,0"/>
-                <Button Content="F" Width="30" Height="30" Margin="0,0,10,0"/>
-                <Button Content="G" Width="30" Height="30" Margin="0,0,10,0"/>
-                <Button Content="H" Width="30" Height="30" Margin="0,0,10,0"/>
-                <Button Content="J" Width="30" Height="30" Margin="0,0,10,0"/>
-                <Button Content="K" Width="30" Height="30"/>
-            </DockPanel>
-            <Rectangle Height="10"></Rectangle>
-            <DockPanel HorizontalAlignment="Center">
-                <Button Content="P" Width="30" Height="30" Margin="0,0,10,0"/>
-                <Button Content="Y" Width="30" Height="30" Margin="0,0,10,0"/>
-                <Button Content="X" Width="30" Height="30" Margin="0,0,10,0"/>
-                <Button Content="C" Width="30" Height="30" Margin="0,0,10,0"/>
-                <Button Content="V" Width="30" Height="30" Margin="0,0,10,0"/>
-                <Button Content="B" Width="30" Height="30" Margin="0,0,10,0"/>
-                <Button Content="N" Width="30" Height="30" Margin="0,0,10,0"/>
-                <Button Content="M" Width="30" Height="30" Margin="0,0,10,0"/>
-                <Button Content="L" Width="30" Height="30"/>
-            </DockPanel>
+
         </StackPanel>
     </ScrollViewer>
 </Window>
