@@ -130,7 +130,6 @@ namespace Enigma
             podesavanja.Show();
             podesavanja.Left = Left;
             podesavanja.Top = Top + 50;
-
         }
 
         private void Window_LocationChanged(object sender, EventArgs e)

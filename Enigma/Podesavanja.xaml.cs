@@ -23,5 +23,15 @@ namespace Enigma
         {
             InitializeComponent();
         }
+
+        private void Ponisti_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+        private void OK_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
     }
 }

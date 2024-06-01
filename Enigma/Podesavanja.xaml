@@ -7,7 +7,8 @@
         mc:Ignorable="d"
         Title="Podesavanja" Height="300" Width="735" ResizeMode="NoResize" ShowInTaskbar="False" Topmost="True" Opacity="0.8" WindowStyle="None" Background="#FF7B7B7B">
     <Grid>
-        <Label x:Name="label" Content="podesavanja" HorizontalAlignment="Left" Margin="300,132,0,0" VerticalAlignment="Top" Height="31" Width="68"/>
-
+        <Button x:Name="OK" Content="Potvrdi" HorizontalAlignment="Left" Margin="167,263,0,0" VerticalAlignment="Top" Height="27" Width="169" Click="OK_Click"/>
+        <Button x:Name="Ponisti" Content="Poništi" HorizontalAlignment="Left" Margin="399,263,0,0" VerticalAlignment="Top" Height="27" Width="169" Click="Ponisti_Click"/>
+        <Label x:Name="PodesavanjaNaslov" Content="            Podešavanja" HorizontalAlignment="Center" Margin="0,11,0,0" VerticalAlignment="Top" Width="225" FontSize="18" FontWeight="Bold"/>
     </Grid>
 </Window>
