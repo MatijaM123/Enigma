@@ -29,6 +29,8 @@ namespace Enigma
             InitializeComponent();
         }
         Color svetlo = new Color();
+        int brojacBoja = 0;
+        string trenutnoSlovoPlug = "";
         private void Load(object sender, RoutedEventArgs e)
         {
             svetlo.A = 255;
@@ -40,6 +42,12 @@ namespace Enigma
         private void Oboj(Ellipse e )
         {
             e.Fill = new SolidColorBrush(svetlo);
+        }
+
+        private void Spoji(object sender, RoutedEventArgs e)
+        {
+            string[] pom = sender.ToString().Split();
+            trenutnoSlovoPlug = pom[1];
         }
     }
 }
