@@ -28,6 +28,7 @@ namespace Enigma
             Loaded += Load;
             InitializeComponent();
         }
+        Podesavanja podesavanja;
         Color svetlo = new Color();
         int brojacBoja = 0;
         string trenutnoSlovoPlug = "";
@@ -120,6 +121,32 @@ namespace Enigma
             else
             {
                 R1G.Content = "A";
+            }
+        }
+
+        private void RS_Click(object sender, RoutedEventArgs e) //Bilo koje srednje dugme rotora
+        {
+            podesavanja = new Podesavanja();
+            podesavanja.Show();
+            podesavanja.Left = Left;
+            podesavanja.Top = Top + 50;
+
+        }
+
+        private void Window_LocationChanged(object sender, EventArgs e)
+        {
+            if (podesavanja != null)
+            {
+                podesavanja.Left = Left;
+                podesavanja.Top = Top + 50;
+            }
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (podesavanja != null)
+            {
+                podesavanja.Close();
             }
         }
 

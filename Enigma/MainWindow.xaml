@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Enigma"
         mc:Ignorable="d"
-        Title="Enigma" Height="800" Width="735" ResizeMode="NoResize">
+        Title="Enigma" Height="800" Width="735" ResizeMode="NoResize" LocationChanged="Window_LocationChanged" Closing="Window_Closing">
     <StackPanel Opacity="1">
         <StackPanel.Background>
             <ImageBrush ImageSource="/1.jpg"/>
@@ -51,13 +51,13 @@
         <DockPanel Width="140">
 
             <Rectangle Width="15"></Rectangle>
-            <Button x:Name="R3S" Content="A" HorizontalAlignment="Left" Height="45" VerticalAlignment="Top" Width="20"  Background="White"/>
+            <Button x:Name="R3S" Content="A" HorizontalAlignment="Left" Height="45" VerticalAlignment="Top" Width="20"  Background="White" Click="RS_Click"/>
 
             <Rectangle Width="15"></Rectangle>
-            <Button x:Name="R2S" Content="A" HorizontalAlignment="Left" Height="45" VerticalAlignment="Top" Width="20"  Background="White"/>
+            <Button x:Name="R2S" Content="A" HorizontalAlignment="Left" Height="45" VerticalAlignment="Top" Width="20"  Background="White" Click="RS_Click"/>
 
             <Rectangle Width="15"></Rectangle>
-            <Button x:Name="R1S" Content="A" HorizontalAlignment="Left" Height="45" VerticalAlignment="Top" Width="20"  Background="White"/>
+            <Button x:Name="R1S" Content="A" HorizontalAlignment="Left" Height="45" VerticalAlignment="Top" Width="20"  Background="White" Click="RS_Click"/>
         </DockPanel>
 
         <DockPanel Width="140">
