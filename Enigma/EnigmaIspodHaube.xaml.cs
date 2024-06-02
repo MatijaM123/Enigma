@@ -41,7 +41,10 @@ namespace Enigma
         {
             SaveFileDialog s = new SaveFileDialog();
             s.FileName = "Koraci sifrovanja.txt";
-            s.ShowDialog();
+            if (s.ShowDialog() == true)
+            {
+                File.WriteAllText(s.FileName, Main.sr.ToString());
+            }
         }
         private void TastaturaKlik(object sender, RoutedEventArgs e)
         {
