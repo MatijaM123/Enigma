@@ -7,36 +7,42 @@
         mc:Ignorable="d"
         Title="Podesavanja" Height="300" Width="735" ResizeMode="NoResize" ShowInTaskbar="False" Topmost="True" Opacity="0.9" WindowStyle="None" Background="#FF7B7B7B" AllowsTransparency="True">
     <Grid>
-        <Button x:Name="OK" Content="Potvrdi" HorizontalAlignment="Left" Margin="167,263,0,0" VerticalAlignment="Top" Height="27" Width="169" Click="OK_Click"/>
-        <Button x:Name="Ponisti" Content="Poništi" HorizontalAlignment="Left" Margin="399,263,0,0" VerticalAlignment="Top" Height="27" Width="169" Click="Ponisti_Click"/>
-        <Label x:Name="PodesavanjaNaslov" Content="            Podešavanja" HorizontalAlignment="Center" Margin="0,11,0,0" VerticalAlignment="Top" Width="225" FontSize="18" FontWeight="Bold"/>
-        <Label x:Name="label3" Content="Rotor III" HorizontalAlignment="Left" Margin="515,67,0,0" VerticalAlignment="Top" Height="26" Width="55"/>
-        <Label x:Name="label2" Content="Rotor II" HorizontalAlignment="Left" Margin="448,67,0,0" VerticalAlignment="Top" Height="26" Width="52"/>
-        <Label x:Name="label1" Content="Rotor I" HorizontalAlignment="Left" Margin="377,67,0,0" VerticalAlignment="Top" Width="50"/>
-        <Label x:Name="rotor" Content="Rotor" HorizontalAlignment="Left" Margin="168,93,0,0" VerticalAlignment="Top" Width="42"/>
-        <Label x:Name="reflektor" Content="Reflektor : " HorizontalAlignment="Left" Margin="168,67,0,0" VerticalAlignment="Top" Width="84"/>
-        <Label x:Name="rotor_Copy" Content="Rotor" HorizontalAlignment="Left" Margin="168,119,0,0" VerticalAlignment="Top" Width="42"/>
-        <Label x:Name="rotor_Copy1" Content="Pozicija" HorizontalAlignment="Left" Margin="168,145,0,0" VerticalAlignment="Top" Width="52"/>
-        <ComboBox x:Name="cbx_rotor1" HorizontalAlignment="Left" Margin="377,95,0,0" VerticalAlignment="Top" Width="50" SelectedIndex="0">
+        <Button x:Name="OK" Content="Potvrdi" HorizontalAlignment="Left" Margin="167,252,0,0" VerticalAlignment="Top" Height="38" Width="169" Click="OK_Click" FontSize="17"/>
+        <Button x:Name="Ponisti" Content="Poništi" HorizontalAlignment="Left" Margin="399,252,0,0" VerticalAlignment="Top" Height="38" Width="169" Click="Ponisti_Click" FontSize="17"/>
+        <Label x:Name="PodesavanjaNaslov" Content="Podešavanja" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Width="137" FontSize="22" FontWeight="Bold"/>
+        <Label x:Name="label3" Content="Rotor III" HorizontalAlignment="Left" Margin="538,62,0,0" VerticalAlignment="Top" Height="34" Width="70" FontSize="17"/>
+        <Label x:Name="label2" Content="Rotor II" HorizontalAlignment="Left" Margin="465,62,0,0" VerticalAlignment="Top" Height="31" Width="70" FontSize="17"/>
+        <Label x:Name="label1" Content="Rotor I" HorizontalAlignment="Left" Margin="389,62,0,0" VerticalAlignment="Top" Width="65" FontSize="17"/>
+        <Label x:Name="rotor" Content="Rotor" HorizontalAlignment="Left" Margin="168,93,0,0" VerticalAlignment="Top" Width="86" FontSize="17"/>
+        <Label x:Name="reflektor" Content="Reflektor : " HorizontalAlignment="Left" Margin="168,63,0,0" VerticalAlignment="Top" Width="84" FontSize="17"/>
+        <Label x:Name="zarez" Content="Zarez" HorizontalAlignment="Left" Margin="168,119,0,0" VerticalAlignment="Top" Width="86" FontSize="17"/>
+        <Label x:Name="pocetnaPozicija" Content="Početna pozicija" HorizontalAlignment="Left" Margin="168,145,0,0" VerticalAlignment="Top" Width="136" FontSize="17"/>
+        <ComboBox x:Name="cbx_rotor1" HorizontalAlignment="Left" Margin="396,93,0,0" VerticalAlignment="Top" Width="50" SelectedIndex="0" FontSize="17">
             <ComboBoxItem>I</ComboBoxItem>
             <ComboBoxItem>II</ComboBoxItem>
             <ComboBoxItem>III</ComboBoxItem>
+            <ComboBoxItem>IV</ComboBoxItem>
+            <ComboBoxItem>V</ComboBoxItem>
         </ComboBox>
-        <ComboBox x:Name="cbx_rotor2" HorizontalAlignment="Left" Margin="451,95,0,0" VerticalAlignment="Top" Width="48" SelectedIndex="1">
+        <ComboBox x:Name="cbx_rotor2" HorizontalAlignment="Left" Margin="476,93,0,0" VerticalAlignment="Top" Width="48" SelectedIndex="1" FontSize="17">
             <ComboBoxItem>I</ComboBoxItem>
             <ComboBoxItem>II</ComboBoxItem>
             <ComboBoxItem>III</ComboBoxItem>
+            <ComboBoxItem>IV</ComboBoxItem>
+            <ComboBoxItem>V</ComboBoxItem>
         </ComboBox>
-        <ComboBox x:Name="cbx_rotor3" HorizontalAlignment="Left" Margin="519,95,0,0" VerticalAlignment="Top" Width="49" SelectedIndex="2">
+        <ComboBox x:Name="cbx_rotor3" HorizontalAlignment="Left" Margin="548,93,0,0" VerticalAlignment="Top" Width="48" SelectedIndex="2" FontSize="17">
             <ComboBoxItem>I</ComboBoxItem>
             <ComboBoxItem>II</ComboBoxItem>
             <ComboBoxItem>III</ComboBoxItem>
+            <ComboBoxItem>IV</ComboBoxItem>
+            <ComboBoxItem>V</ComboBoxItem>
         </ComboBox>
-        <ComboBox x:Name="cbx_reflektor" HorizontalAlignment="Left" Margin="240,69,0,0" VerticalAlignment="Top" Width="68" SelectedIndex="0">
+        <ComboBox x:Name="cbx_reflektor" HorizontalAlignment="Left" Margin="259,64,0,0" VerticalAlignment="Top" Width="93" SelectedIndex="0" FontSize="17">
             <ComboBoxItem>UKW-B</ComboBoxItem>
             <ComboBoxItem>UKW-C</ComboBoxItem>
         </ComboBox>
-        <ComboBox x:Name="cbx_podesavanje1" HorizontalAlignment="Left" Margin="377,123,0,0" VerticalAlignment="Top" Width="50" SelectedIndex="0">
+        <ComboBox x:Name="cbx_zarez1" HorizontalAlignment="Left" Margin="396,121,0,0" VerticalAlignment="Top" Width="50" SelectedIndex="0" FontSize="17">
             <ComboBoxItem>A</ComboBoxItem>
             <ComboBoxItem>B</ComboBoxItem>
             <ComboBoxItem>C</ComboBoxItem>
@@ -64,7 +70,7 @@
             <ComboBoxItem>Y</ComboBoxItem>
             <ComboBoxItem>Z</ComboBoxItem>
         </ComboBox>
-        <ComboBox x:Name="cbx_podesavanje2" HorizontalAlignment="Left" Margin="451,123,0,0" VerticalAlignment="Top" Width="48" RenderTransformOrigin="1.696,0.41" SelectedIndex="0">
+        <ComboBox x:Name="cbx_zarez2" HorizontalAlignment="Left" Margin="476,121,0,0" VerticalAlignment="Top" Width="48" RenderTransformOrigin="1.696,0.41" SelectedIndex="0" FontSize="17">
             <ComboBoxItem Content="A"/>
             <ComboBoxItem Content="B"/>
             <ComboBoxItem Content="C"/>
@@ -92,7 +98,7 @@
             <ComboBoxItem Content="Y"/>
             <ComboBoxItem Content="Z"/>
         </ComboBox>
-        <ComboBox x:Name="cbx_podesavanje3" HorizontalAlignment="Left" Margin="519,123,0,0" VerticalAlignment="Top" Width="49" RenderTransformOrigin="1.696,0.41" SelectedIndex="0">
+        <ComboBox x:Name="cbx_zarez3" HorizontalAlignment="Left" Margin="548,121,0,0" VerticalAlignment="Top" Width="48" RenderTransformOrigin="1.696,0.41" SelectedIndex="0" FontSize="17">
             <ComboBoxItem Content="A"/>
             <ComboBoxItem Content="B"/>
             <ComboBoxItem Content="C"/>
@@ -120,7 +126,7 @@
             <ComboBoxItem Content="Y"/>
             <ComboBoxItem Content="Z"/>
         </ComboBox>
-        <ComboBox x:Name="cbx_pozicija1" HorizontalAlignment="Left" Margin="377,150,0,0" VerticalAlignment="Top" Width="50" SelectedIndex="0">
+        <ComboBox x:Name="cbx_pozicija1" HorizontalAlignment="Left" Margin="396,149,0,0" VerticalAlignment="Top" Width="50" SelectedIndex="0" FontSize="17">
             <ComboBoxItem Content="A"/>
             <ComboBoxItem Content="B"/>
             <ComboBoxItem Content="C"/>
@@ -148,7 +154,7 @@
             <ComboBoxItem Content="Y"/>
             <ComboBoxItem Content="Z"/>
         </ComboBox>
-        <ComboBox x:Name="cbx_pozicija2" HorizontalAlignment="Left" Margin="451,150,0,0" VerticalAlignment="Top" Width="48" SelectedIndex="0">
+        <ComboBox x:Name="cbx_pozicija2" HorizontalAlignment="Left" Margin="476,149,0,0" VerticalAlignment="Top" Width="48" SelectedIndex="0" FontSize="17">
             <ComboBoxItem Content="A"/>
             <ComboBoxItem Content="B"/>
             <ComboBoxItem Content="C"/>
@@ -176,7 +182,7 @@
             <ComboBoxItem Content="Y"/>
             <ComboBoxItem Content="Z"/>
         </ComboBox>
-        <ComboBox x:Name="cbx_pozicija3" HorizontalAlignment="Left" Margin="519,150,0,0" VerticalAlignment="Top" Width="49" SelectedIndex="0">
+        <ComboBox x:Name="cbx_pozicija3" HorizontalAlignment="Left" Margin="548,149,0,0" VerticalAlignment="Top" Width="48" SelectedIndex="0" FontSize="17">
             <ComboBoxItem Content="A"/>
             <ComboBoxItem Content="B"/>
             <ComboBoxItem Content="C"/>
