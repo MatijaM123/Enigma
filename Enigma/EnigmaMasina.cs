@@ -10,7 +10,7 @@ namespace Enigma
     internal class EnigmaMasina : ISifrovanje
     {
         List<Rotor> rotori = new List<Rotor>();
-        Reflektor reflektor = new Reflektor();
+        Reflektor reflektor = new Reflektor(1);
         Plugboard plugboard = new Plugboard();
         public string TokSifrovanja = null;
         public List<char> Pozicije { get; set; }

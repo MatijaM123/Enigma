@@ -31,6 +31,7 @@ namespace Enigma
             InitializeComponent();
         }
         Podesavanja podesavanja;
+        EnigmaIspodHaube animacija;
         Color svetlo = new Color();
         int brojacBoja = 0;
         char trenutnoSlovoPlug = ' ';
@@ -212,16 +213,10 @@ namespace Enigma
         }
         private void KoraciSifrovanja(object sender, RoutedEventArgs e)
         {
-            EnigmaIspodHaube W = new EnigmaIspodHaube();
+            animacija = new EnigmaIspodHaube();
             this.Visibility = Visibility.Hidden;
-            W.ShowDialog();
+            animacija.ShowDialog();
             this.Visibility = Visibility.Visible;
-            SaveFileDialog s = new SaveFileDialog();
-            s.FileName = "Koraci sifrovanja.txt";
-            s.ShowDialog();
-            StreamWriter sw = new StreamWriter(s.FileName);
-            sw.WriteLine("Unos -> Plugboard -> Rotor I -> Rotor II -> Rotor III -> Reflektor -> Rotor III -> Rotor II -> Rotor I -> Plugboard -> Svetlo");
-            sw.Close();
         }
     }
 }
