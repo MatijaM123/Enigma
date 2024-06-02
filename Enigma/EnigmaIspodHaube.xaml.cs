@@ -64,12 +64,103 @@ namespace Enigma
             Canvas C = PlugboardCanvas;
             NacrtajKvadraticSaSlovom(C, C.Width - C.Height / 26, C.Height - (s[0] - 'A' + 1) * C.Height / 26, ((char)((s[0] - 'A' + 26) % 26 + 'A')).ToString(), Brushes.Aqua);
             NacrtajKvadraticSaSlovom(C, 0, C.Height - (s[1]-'A' + 1) * C.Height / 26, ((char)((s[1] - 'A' + 26) % 26 + 'A')).ToString(),Brushes.Aqua);
+            Line line = new Line
+            {
+                X1 = (C.Height / 26) + 2,
+                Y1 = C.Height - (s[1] - 'A' +1) * C.Height / 26 + C.Height / 52,
+                X2 = C.Width - 2 - C.Height / 26,
+                Y2 = C.Height - (s[0] - 'A' +1) * C.Height / 26 + C.Height / 52,
+                Stroke = Brushes.Aqua,
+                StrokeThickness = 3
+            };
+            C.Children.Add(line);
             for (int i = 0; i < 3; i++)
             {
                 C = i == 1 ? Rotor2Canvas : i == 2 ? Rotor3Canvas : Rotor1Canvas;
-                NacrtajKvadraticSaSlovom(C, 0, C.Height - (s[2+2*i] - 'A' + 1) * C.Height / 26, ((char)((s[2 + 2* i] - 'A' + Main.enigma.Pozicije[i] - 'A' + 26) % 26 + 'A')).ToString(), Brushes.Aqua);
-                NacrtajKvadraticSaSlovom(C, C.Width - C.Height / 26, C.Height - (s[3 + 2 * i] - 'A' + 1) * C.Height / 26, ((char)((s[3 + 2 * i] - 'A' + Main.enigma.Pozicije[i] - 'A' + 26) % 26 + 'A')).ToString(), Brushes.Aqua);
+                NacrtajKvadraticSaSlovom(C, 0, (s[3 + 2 * i] - Main.enigma.Pozicije[i] + 27) % 26 == 0?0: C.Height - ((s[3+2*i] - Main.enigma.Pozicije[i] + 27) %26) * C.Height / 26, s[3 + 2* i].ToString(), Brushes.Aqua);
+                NacrtajKvadraticSaSlovom(C, C.Width - C.Height / 26, (s[2 + 2 * i] - Main.enigma.Pozicije[i] + 27) % 26==0?0: C.Height - ((s[2 + 2 * i] - Main.enigma.Pozicije[i] +27)%26) * C.Height / 26,s[2 + 2 * i].ToString(), Brushes.Aqua);
+                line = new Line
+                {
+                    X1 = (C.Height / 26) + 2,
+                    Y1 = ((s[3 + 2 * i] - Main.enigma.Pozicije[i] + 27) % 26 == 0 ? 0 : C.Height - ((s[3 + 2 * i] - Main.enigma.Pozicije[i] + 27) % 26) * C.Height / 26) + C.Height / 52,
+                    X2 = C.Width - 2 - C.Height / 26,
+                    Y2 = ((s[2 + 2 * i] - Main.enigma.Pozicije[i] + 27) % 26 == 0 ? 0 : C.Height - ((s[2 + 2 * i] - Main.enigma.Pozicije[i] + 27) % 26) * C.Height / 26) + C.Height / 52 ,
+                    Stroke = Brushes.Aqua,
+                    StrokeThickness = 3
+                };
+                C.Children.Add(line);
             }
+            C = ReflectorCanvas;
+            NacrtajKvadraticSaSlovom(C, C.Width - C.Height / 26, C.Height - (s[8] - 'A' + 1) * C.Height / 26, s[8].ToString(), Brushes.Aqua);
+            NacrtajKvadraticSaSlovom(C, 0, C.Height - (s[8] - 'A' + 1) * C.Height / 26, s[8].ToString(), Brushes.Aqua);
+            line = new Line
+            {
+                X1 = (C.Height / 26) + 2,
+                Y1 = C.Height - (s[8] - 'A' + 1) * C.Height / 26 + C.Height / 52,
+                X2 = C.Width - 2 - C.Height / 26,
+                Y2 = C.Height - (s[8] - 'A' + 1) * C.Height / 26 + C.Height / 52,
+                Stroke = Brushes.Aqua,
+                StrokeThickness = 3
+            };
+            C.Children.Add(line);
+            line = new Line
+            {
+                X1 = (C.Height / 26) + 4,
+                Y1 = C.Height - (s[8] - 'A' + 1) * C.Height / 26 + C.Height / 52,
+                X2 = (C.Height / 26) + 4,
+                Y2 = C.Height - (s[9] - 'A' + 1) * C.Height / 26 + C.Height / 52,
+                Stroke = Brushes.Navy,
+                StrokeThickness = 3
+            };
+            C.Children.Add(line);
+            NacrtajKvadraticSaSlovom(C, C.Width - C.Height / 26, C.Height - (s[9] - 'A' + 1) * C.Height / 26, s[9].ToString(), Brushes.Gold);
+            NacrtajKvadraticSaSlovom(C, 0, C.Height - (s[9] - 'A' + 1) * C.Height / 26, s[9].ToString(), Brushes.Gold);
+            line = new Line
+            {
+                X1 = (C.Height / 26) + 2,
+                Y1 = C.Height - (s[9] - 'A' + 1) * C.Height / 26 + C.Height / 52,
+                X2 = C.Width - 2 - C.Height / 26,
+                Y2 = C.Height - (s[9] - 'A' + 1) * C.Height / 26 + C.Height / 52,
+                Stroke = Brushes.Gold,
+                StrokeThickness = 3
+            };
+            C.Children.Add(line);
+            for (int i = 0; i < 3; i++)
+            {
+                C = i == 1 ? Rotor2Canvas : i == 2 ? Rotor1Canvas : Rotor3Canvas;
+                if ((s[10 + 2 * i] - Main.enigma.Pozicije[2 - i] + 27) % 26 == 0)
+                    NacrtajKvadraticSaSlovom(C, 0, 0, s[10 + 2 * i].ToString(), Brushes.Gold);
+                else
+                    NacrtajKvadraticSaSlovom(C, 0, C.Height - ((s[10 + 2 * i] - Main.enigma.Pozicije[2-i] +27) % 26) * C.Height / 26, s[10 + 2 * i].ToString(), Brushes.Gold);
+                if ((s[11 + 2 * i] - Main.enigma.Pozicije[2 - i] + 27) % 26 == 0)
+                    NacrtajKvadraticSaSlovom(C, C.Width - C.Height / 26, 0, s[11 + 2 * i].ToString(), Brushes.Gold);
+                else
+                    NacrtajKvadraticSaSlovom(C, C.Width - C.Height / 26, C.Height - ((s[11 + 2 * i] - Main.enigma.Pozicije[2 - i] + 27) % 26) * C.Height / 26, s[11 + 2 * i].ToString(), Brushes.Gold);
+                line = new Line
+                {
+
+                    X1 = (C.Height / 26) + 2,
+                    Y1 = ((s[10 + 2 * i] - Main.enigma.Pozicije[2 - i] + 27) % 26 == 0?0:C.Height - ((s[10 + 2 * i] - Main.enigma.Pozicije[2 - i] + 27) % 26) * C.Height / 26) + C.Height / 52,
+                    X2 = C.Width - 2 - C.Height / 26,
+                    Y2 = ((s[11 + 2 * i] - Main.enigma.Pozicije[2 - i] + 27) % 26==0?0:C.Height - ((s[11 + 2 * i] - Main.enigma.Pozicije[2 - i] + 27) % 26) * C.Height / 26) + C.Height/52,
+                    Stroke = Brushes.Gold,
+                    StrokeThickness = 3
+                };
+                C.Children.Add(line);
+            }
+            C = PlugboardCanvas;
+            NacrtajKvadraticSaSlovom(C, C.Width - C.Height / 26, C.Height - (s[16] - 'A' + 1) * C.Height / 26, ((char)((s[16] - 'A' + 26) % 26 + 'A')).ToString(), Brushes.Gold);
+            NacrtajKvadraticSaSlovom(C, 0, C.Height - (s[17] - 'A' + 1) * C.Height / 26, ((char)((s[17] - 'A' + 26) % 26 + 'A')).ToString(), Brushes.Gold);
+            line = new Line
+            {
+                X1 = (C.Height / 26) + 2,
+                Y1 = C.Height - (s[17] - 'A' + 1) * C.Height / 26 + C.Height / 52,
+                X2 = C.Width - 2 - C.Height / 26,
+                Y2 = C.Height - (s[16] - 'A' + 1) * C.Height / 26 + C.Height / 52,
+                Stroke = Brushes.Gold,
+                StrokeThickness = 3
+            };
+            C.Children.Add(line);
         }
         protected void NacrtajKvadraticSaSlovom(Canvas c, double x, double y, string slovo,Brush b)
         {
@@ -97,23 +188,6 @@ namespace Enigma
             Canvas.SetLeft(tb, x);
             Canvas.SetTop(tb, y);
             c.Children.Add(tb);
-        }
-        protected void NacrtajLinijeIzmedjuKvadratica(Canvas c, char[] slova,Brush b, char TrSlovo = 'A')
-        {
-            // Simple example to draw lines between letters (A to Z, B to Y, ...)
-            for (int i = 0; i < slova.Length; i++)
-            {
-                Line line = new Line
-                {
-                    X1 = (c.Height / 26) + 2,
-                    Y1 = c.Height - ((slova[i] - TrSlovo + 26) % 26) * (c.Height / 26) - c.Height / 52,
-                    X2 = c.Width - 2 - c.Height / 26,
-                    Y2 = c.Height - ((26 - TrSlovo + 'A' + i) % 26) * (c.Height / 26) - c.Height / 52,
-                    Stroke = b,
-                    StrokeThickness = 1
-                };
-                c.Children.Add(line);
-            }
         }
         private void PomeriRotor(object sender, RoutedEventArgs e)
         {
