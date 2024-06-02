@@ -45,7 +45,7 @@ namespace Enigma
         object pocetniIzgledSvetla;
         private void Load(object sender, RoutedEventArgs e)
         {
-           // Forma.Focus();
+            // Forma.Focus();
             svetlo = NapraviRGB(255, 189, 89);
             NapraviBoje();
             NapraviSvetla();
@@ -243,6 +243,17 @@ namespace Enigma
             Oboj(x);
             nesifrovaniTekst.Text += t.Content.ToString()[0];
             sifrovaniTekst.Text += x;
+            R3G.Content = (char)((enigma.Pozicije[0] + 1 + 26 - 'A') % 26 + 'A');
+            R3S.Content = enigma.Pozicije[0];
+            R3D.Content = (char)((enigma.Pozicije[0] - 1 + 26 - 'A') % 26 + 'A');
+
+            R2G.Content = (char)((enigma.Pozicije[1] + 1 + 26 - 'A') % 26 + 'A');
+            R2S.Content = enigma.Pozicije[1];
+            R2D.Content = (char)((enigma.Pozicije[1] - 1 + 26 - 'A') % 26 + 'A');
+
+            R1G.Content = (char)((enigma.Pozicije[2] + 1 + 26 - 'A') % 26 + 'A');
+            R1S.Content = enigma.Pozicije[2];
+            R1D.Content = (char)((enigma.Pozicije[2] - 1 + 26 - 'A') % 26 + 'A');
         }
 
         private void FizickaTastaturaKlik(object sender, KeyEventArgs e)
@@ -253,6 +264,17 @@ namespace Enigma
                 Oboj(x);
                 nesifrovaniTekst.Text += e.Key.ToString()[0];
                 sifrovaniTekst.Text += x;
+                R3G.Content = (char)((enigma.Pozicije[0] + 1 + 26 - 'A') % 26 + 'A');
+                R3S.Content = enigma.Pozicije[0];
+                R3D.Content = (char)((enigma.Pozicije[0] - 1 + 26 - 'A') % 26 + 'A');
+
+                R2G.Content = (char)((enigma.Pozicije[1] + 1 + 26 - 'A') % 26 + 'A');
+                R2S.Content = enigma.Pozicije[1];
+                R2D.Content = (char)((enigma.Pozicije[1] - 1 + 26 - 'A') % 26 + 'A');
+
+                R1G.Content = (char)((enigma.Pozicije[2] + 1 + 26 - 'A') % 26 + 'A');
+                R1S.Content = enigma.Pozicije[2];
+                R1D.Content = (char)((enigma.Pozicije[2] - 1 + 26 - 'A') % 26 + 'A');
             }
         }
     }
