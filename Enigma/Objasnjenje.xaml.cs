@@ -26,8 +26,8 @@ namespace Enigma
         private void Rotor_MouseEnter(object sender, MouseEventArgs e)
         {
             Rotor.Opacity = 1;
-            Naziv.Text = "Rotor";
-            Opis.Text = "Idu vrm vrm u krug";
+            Naziv.Text = "Rotori";
+            Opis.Text = "U rotorima se mešaju slova. \nEnigma ima 3 rotora, svaki ima \nbrojeve od 1 do 26 za svako \nslovo adecede i svaki ima 26 \nmetalnih šiljaka sa kojima se \npovezuju. Unutar rotora su \nizmešane žice koje povezuju 2 \nkraja, tako da ne izadje isto \nslovo koje je ušlo u rotor. Slovo \nse promeni 3 puta prolazeći \nkroz 3 rotora.";
         }
 
         private void Rotor_MouseLeave(object sender, MouseEventArgs e)
@@ -41,7 +41,7 @@ namespace Enigma
         {
             Plugboard.Opacity = 1;
             Naziv.Text = "Plugboard";
-            Opis.Text = "povezujes stvari";
+            Opis.Text = "Pomoću plugboard-a možemo \ndodatno da zamenimo neka 2 \nslova povezujući ih kablovima u \nplugboard-u.";
         }
 
         private void Plugboard_MouseLeave(object sender, MouseEventArgs e)
@@ -55,7 +55,7 @@ namespace Enigma
         {
             Keyboard.Opacity = 1;
             Naziv.Text = "Keyboard";
-            Opis.Text = "kucas ovde";
+            Opis.Text = "Tastatura se koristi za unos \nslova, svaki put kada se unese \nslovo rotor se okrene. I kada \nprvi rotor napravi ceo krug \ntada se sledeći pomeri za jedno \nmesto.";
         }
 
         private void Keyboard_MouseLeave(object sender, MouseEventArgs e)
@@ -69,12 +69,25 @@ namespace Enigma
         {
             Lampboard.Opacity = 1;
             Naziv.Text = "Lampboard";
-            Opis.Text = "svetle";
+            Opis.Text = "Na lampboard-u se prikazuje \nslovo koje dobijemo nakon \nšifrovanja, tako što zasvetli \nlampica koja predstavlja to \nslovo.";
         }
 
         private void Lampboard_MouseLeave(object sender, MouseEventArgs e)
         {
             Lampboard.Opacity = 0;
+            Naziv.Text = "";
+            Opis.Text = "";
+        }
+        private void Reflektor_MouseEnter(object sender, MouseEventArgs e)
+        {
+            Reflektor.Opacity = 1;
+            Naziv.Text = "Reflektor";
+            Opis.Text = "Nakon što slovo, koje menjamo, \nprođe kroz rotore ono dolazi do \nreflektora, koji ga menja još \njedanput i šalje nazad da \nponovo prođe kroz sva 3 \nrotora.";
+        }
+
+        private void Reflektor_MouseLeave(object sender, MouseEventArgs e)
+        {
+            Reflektor.Opacity = 0;
             Naziv.Text = "";
             Opis.Text = "";
         }
