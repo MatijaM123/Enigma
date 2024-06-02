@@ -133,9 +133,6 @@ namespace Enigma
             if (pravac == 'S')
             {
                 podesavanja = new Podesavanja();
-                podesavanja.cbx_zarez1.SelectedIndex = 0;
-                podesavanja.cbx_zarez2.SelectedIndex = 0;
-                podesavanja.cbx_zarez3.SelectedIndex = 0;
                 podesavanja.cbx_pozicija1.SelectedIndex = Convert.ToInt32(char.Parse(R1S.Content.ToString())) - 65;
                 podesavanja.cbx_pozicija2.SelectedIndex = Convert.ToInt32(char.Parse(R2S.Content.ToString())) - 65;
                 podesavanja.cbx_pozicija3.SelectedIndex = Convert.ToInt32(char.Parse(R3S.Content.ToString())) - 65;
