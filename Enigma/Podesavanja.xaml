@@ -38,7 +38,7 @@
             <ComboBoxItem>IV</ComboBoxItem>
             <ComboBoxItem>V</ComboBoxItem>
         </ComboBox>
-        <ComboBox x:Name="cbx_reflektor" HorizontalAlignment="Left" Margin="259,64,0,0" VerticalAlignment="Top" Width="68" SelectedIndex="0" FontSize="17">
+        <ComboBox x:Name="cbx_reflektor" HorizontalAlignment="Left" Margin="259,64,0,0" VerticalAlignment="Top" Width="93" SelectedIndex="0" FontSize="17">
             <ComboBoxItem>UKW-B</ComboBoxItem>
             <ComboBoxItem>UKW-C</ComboBoxItem>
         </ComboBox>
