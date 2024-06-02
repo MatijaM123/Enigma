@@ -223,7 +223,6 @@ namespace Enigma
             s.Background = boje[brojacBoja / 2];
             brojacBoja++;
             //plugboard.KlikSlovo(trenutnoSlovoPlug);
-            Oboj(trenutnoSlovoPlug);
         }
         private void KoraciSifrovanja(object sender, RoutedEventArgs e)
         {
@@ -237,8 +236,8 @@ namespace Enigma
             Button t = (Button)sender;
             char x = enigma.Sifruj(t.Content.ToString()[0]);
             Oboj(x);
-            BojiBelo(x);
-            //Kaca, ovde dodaj ispis na text box koji si napravila
+            nesifrovaniTekst.Text += t.Content.ToString()[0];
+            sifrovaniTekst.Text += x;
         }
     }
 }
