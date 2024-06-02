@@ -55,6 +55,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="EnigmaIspodHaube.xaml.cs">
+      <DependentUpon>EnigmaIspodHaube.xaml</DependentUpon>
+    </Compile>
     <Compile Include="EnigmaMasina.cs" />
     <Compile Include="Podesavanja.xaml.cs">
       <DependentUpon>Podesavanja.xaml</DependentUpon>
@@ -62,6 +65,10 @@
     <Compile Include="Rotor.cs" />
     <Compile Include="Reflektor.cs" />
     <Compile Include="Plugboard.cs" />
+    <Page Include="EnigmaIspodHaube.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
