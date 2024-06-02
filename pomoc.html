@@ -1,0 +1,90 @@
+<html>
+
+<style>
+body {
+  background-image: url(pozadina.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+
+
+</style>
+
+<h1 style="color:white" align="center">Uputstvo za korišćenje programa</h1>
+<h2 style="color:white" align="center">Emulator Enigma mašine</h2>
+<h3 style="color:white" align="center">Matija Marinković, Katarina Ćirić, Marko Jevtović, Petar Minić, Aleksa Vuković</h3>
+<h4 style="color:white" align="center">III-9 Deveta gimnazija "Mihailo Petrović Alas", Novi Beograd, jun 2024.</h4>
+</br></br></br></br>
+
+<head>
+<title>ENIGMA</title>
+</head>
+<body>
+	</br></br>
+	<div id="UputstvoStrana" color:white" align="center">
+		<div id="Korak1" style="display:block; color:white">
+			<img src="Enigma1.jpg"></img>
+			</br></br></br></br></br></br>
+		</div>
+		<div id="Korak2" style="display:none; color:white">
+			<img src="plugboard.jpg"></img>
+			<h2>Plugboard</h2>
+			<p>Na donjem delu prozora se nalazi plugboard. Da biste povezali dva slova na plugboard-u, prvo kliknite na jedno, pa na drugo, a zatim će povezana slova biti obojena istom bojom.</p>
+		</div>
+		<div id="Korak3" style="display:none; color:white">
+			<img src="tastatura.jpg"></img>
+			<h2>Tastatura</h2>
+			<p>Na srednjem delu prozora se nalazi tastatura. Možete da koristite tu tastaturu ili da kucate na svojoj tastaturi.</p>
+		</div>
+		<div id="Korak4" style="display:none; color:white">
+			<img src="lampboard.jpg"></img>
+			<h2>Lampboard</h2>
+			<p>Pri vrhu prozora se nalazi lampboard. On prikazuje kao koje slovo se izabrano slovo šifrovalo.</p>
+		</div>
+		<div id="Korak5" style="display:none; color:white">
+			<img src="Rotori.jpg"></img>
+			<h2>Rotori</h2>
+			<p>Na vrhu prozora se nalaze tri rotora. Klikom na gornji deo nekog rotora se taj rotor okreće gore. Klikom na donji deo se okreće dole. Klikom na srednji deo se otvaraju podešavanja.</p>
+		</div>
+		<div id="Korak6" style="display:none; color:white">
+			<img src="Edu.jpg"></img>
+			<h2>Edukativni deo</h2>
+			<p>Dugme "Enigma" Vam daje dodatno pojašnjenje o radu Enigme. Skroz dole se nalazi deo za prikazivanje šifrovanog teksta.</p>
+		</div>
+		<div id="Korak7" style="display:none; color:white">
+			<img src="Enigma1.jpg"></img>
+			<h2>Bravo!</h2>
+			<p>Naučili ste osnove rada enigme! Za još informacija iskoristite pomenuti edukatnivni deo programa.</p>
+		</div>
+		<button id="Nazad"; style="background-color:BABDBF; border-color:B3B7B9; color:black"; onclick="nazad()">Nazad</button>
+		<button id="Dalje"; style="background-color:BABDBF; border-color:B3B7B9; color:black"; onclick="dalje()">Dalje</button>
+	</div>
+	
+	<script>
+		var ID = 1;
+		function nazad()
+		{
+			if (ID > 1)
+			{
+				ID--;
+				var trenutniKorak = document.getElementById("Korak" + (ID+1));
+				var noviKorak = document.getElementById("Korak" + ID);
+				trenutniKorak.style.display = 'none';
+				noviKorak.style.display = 'block';
+			}
+		}
+		function dalje()
+		{
+			if (ID < 7)
+			{
+				ID++;
+				var trenutniKorak = document.getElementById("Korak" + (ID-1));
+				var noviKorak = document.getElementById("Korak" + ID);
+				trenutniKorak.style.display = 'none';
+				noviKorak.style.display = 'block';
+			}
+		}
+	</script>
+</body>
+</html>

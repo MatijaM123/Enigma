@@ -31,6 +31,8 @@ namespace Enigma
             InitializeComponent();
         }
         internal EnigmaMasina enigma;
+        public int Rotor1, Rotor2, Rotor3;
+        public int SacuvajReflektor;
         List<char> pozicije = new List<char>();
         List<Rotor> rotori;
         Reflektor reflektor;
@@ -45,12 +47,14 @@ namespace Enigma
         object pocetniIzgledSvetla;
         private void Load(object sender, RoutedEventArgs e)
         {
-           // Forma.Focus();
+            // Forma.Focus();
             svetlo = NapraviRGB(255, 189, 89);
             NapraviBoje();
             NapraviSvetla();
             pocetniIzgledSvetla = (RadialGradientBrush)As.Fill;
-
+            Rotor1 = 1;
+            Rotor2 = 2;
+            Rotor3 = 3;
             rotori = new List<Rotor>();
             rotori.Add(new Rotor(1));
             pozicije.Add('A');
@@ -133,13 +137,15 @@ namespace Enigma
             if (pravac == 'S')
             {
                 podesavanja = new Podesavanja();
-                podesavanja.cbx_zarez1.SelectedIndex = 0;
-                podesavanja.cbx_zarez2.SelectedIndex = 0;
-                podesavanja.cbx_zarez3.SelectedIndex = 0;
                 podesavanja.cbx_pozicija1.SelectedIndex = Convert.ToInt32(char.Parse(R1S.Content.ToString())) - 65;
                 podesavanja.cbx_pozicija2.SelectedIndex = Convert.ToInt32(char.Parse(R2S.Content.ToString())) - 65;
                 podesavanja.cbx_pozicija3.SelectedIndex = Convert.ToInt32(char.Parse(R3S.Content.ToString())) - 65;
                 podesavanja.Main = this;
+                podesavanja.Owner = this;
+                podesavanja.cbx_rotor1.SelectedIndex = Rotor1 - 1;
+                podesavanja.cbx_rotor2.SelectedIndex = Rotor2 - 1;
+                podesavanja.cbx_rotor3.SelectedIndex = Rotor3 - 1;
+                podesavanja.cbx_reflektor.SelectedIndex = SacuvajReflektor;
                 podesavanja.Show();
                 podesavanja.Left = Left;
                 podesavanja.Top = Top + 50;
@@ -239,6 +245,12 @@ namespace Enigma
             O.ShowDialog();
             this.Visibility = Visibility.Visible;
         }
+
+        private void Uputstvo_Click(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("pomoc.html");
+        }
+
         private void TastaturaKlik(object sender, RoutedEventArgs e)
         {
             Button t = (Button)sender;
@@ -246,6 +258,39 @@ namespace Enigma
             Oboj(x);
             nesifrovaniTekst.Text += t.Content.ToString()[0];
             sifrovaniTekst.Text += x;
+            R3G.Content = (char)((enigma.Pozicije[0] + 1 + 26 - 'A') % 26 + 'A');
+            R3S.Content = enigma.Pozicije[0];
+            R3D.Content = (char)((enigma.Pozicije[0] - 1 + 26 - 'A') % 26 + 'A');
+
+            R2G.Content = (char)((enigma.Pozicije[1] + 1 + 26 - 'A') % 26 + 'A');
+            R2S.Content = enigma.Pozicije[1];
+            R2D.Content = (char)((enigma.Pozicije[1] - 1 + 26 - 'A') % 26 + 'A');
+
+            R1G.Content = (char)((enigma.Pozicije[2] + 1 + 26 - 'A') % 26 + 'A');
+            R1S.Content = enigma.Pozicije[2];
+            R1D.Content = (char)((enigma.Pozicije[2] - 1 + 26 - 'A') % 26 + 'A');
+        }
+
+        private void FizickaTastaturaKlik(object sender, KeyEventArgs e)
+        {
+            if (e.Key.ToString().Length == 1)
+            {
+                char x = enigma.Sifruj(e.Key.ToString()[0]);
+                Oboj(x);
+                nesifrovaniTekst.Text += e.Key.ToString()[0];
+                sifrovaniTekst.Text += x;
+                R3G.Content = (char)((enigma.Pozicije[0] + 1 + 26 - 'A') % 26 + 'A');
+                R3S.Content = enigma.Pozicije[0];
+                R3D.Content = (char)((enigma.Pozicije[0] - 1 + 26 - 'A') % 26 + 'A');
+
+                R2G.Content = (char)((enigma.Pozicije[1] + 1 + 26 - 'A') % 26 + 'A');
+                R2S.Content = enigma.Pozicije[1];
+                R2D.Content = (char)((enigma.Pozicije[1] - 1 + 26 - 'A') % 26 + 'A');
+
+                R1G.Content = (char)((enigma.Pozicije[2] + 1 + 26 - 'A') % 26 + 'A');
+                R1S.Content = enigma.Pozicije[2];
+                R1D.Content = (char)((enigma.Pozicije[2] - 1 + 26 - 'A') % 26 + 'A');
+            }
         }
     }
 }
