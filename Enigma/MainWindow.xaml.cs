@@ -210,22 +210,6 @@ namespace Enigma
             plugboard.KlikSlovo(trenutnoSlovoPlug);
             Oboj(trenutnoSlovoPlug);
         }
-
-        private void R3G_Click(object sender, RoutedEventArgs e) //TreciRotor, Gore
-        {
-            string originalGore = R3G.Content.ToString();
-            R3G.Content = R3S.Content;
-            R3S.Content = R3D.Content;
-            if (originalGore != "C")
-            {
-                R3D.Content = (char)(Convert.ToChar(R3D.Content) - 1);
-            }
-            else
-            {
-                R3D.Content = "Z";
-            }
-        }
-
         private void KoraciSifrovanja(object sender, RoutedEventArgs e)
         {
             SaveFileDialog s = new SaveFileDialog();
