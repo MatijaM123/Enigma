@@ -245,6 +245,12 @@ namespace Enigma
             O.ShowDialog();
             this.Visibility = Visibility.Visible;
         }
+
+        private void Uputstvo_Click(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("pomoc.html");
+        }
+
         private void TastaturaKlik(object sender, RoutedEventArgs e)
         {
             Button t = (Button)sender;
