@@ -231,5 +231,13 @@ namespace Enigma
             animacija.ShowDialog();
             this.Visibility = Visibility.Visible;
         }
+        private void TastaturaKlik(object sender, RoutedEventArgs e)
+        {
+            Button t = (Button)sender;
+            char x = enigma.Sifruj(t.Content.ToString()[0]);
+            Oboj(x);
+            BojiBelo(x);
+            //Kaca, ovde dodaj ispis na text box koji si napravila
+        }
     }
 }

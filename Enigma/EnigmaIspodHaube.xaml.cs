@@ -53,8 +53,14 @@ namespace Enigma
             Main.enigma.Sifruj(t.Content.ToString()[0]);
             Iscrtaj();
             //t.Background = Brushes.AliceBlue;
-
+            NacrtajPutanju();
         }
+
+        private void NacrtajPutanju()
+        {
+            
+        }
+
         private void PomeriRotor(object sender, RoutedEventArgs e)
         {
             Button t = (Button)sender;
