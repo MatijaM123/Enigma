@@ -95,9 +95,8 @@ namespace Enigma
         }
         public char Sifruj(char x, bool smer = false) // vraca slovo koje je spojeno sa unetim slovom
         {
-            return Izlazna[x - 'A'].slovo=='.'?(char)(x): Izlazna[x - 'A'].slovo;
+            return Izlazna[x - 'A'].slovo=='.'?x: Izlazna[x - 'A'].slovo;
         }
-
         protected override void NacrtajElement(Canvas C)
         {
             char[] slova = ParsirajIzlazniNiz(Izlazna);

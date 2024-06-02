@@ -60,8 +60,14 @@
       <DependentUpon>EnigmaIspodHaube.xaml</DependentUpon>
     </Compile>
     <Compile Include="EnigmaMasina.cs" />
+    <Compile Include="Objasnjenje.xaml.cs">
+      <DependentUpon>Objasnjenje.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Podesavanja.xaml.cs">
       <DependentUpon>Podesavanja.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pravougaonik.xaml.cs">
+      <DependentUpon>Pravougaonik.xaml</DependentUpon>
     </Compile>
     <Compile Include="Rotor.cs" />
     <Compile Include="Reflektor.cs" />
@@ -83,7 +89,15 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Objasnjenje.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Podesavanja.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pravougaonik.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -125,6 +139,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="enigma.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

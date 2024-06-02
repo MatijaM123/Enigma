@@ -45,7 +45,7 @@ namespace Enigma
         object pocetniIzgledSvetla;
         private void Load(object sender, RoutedEventArgs e)
         {
-            Forma.Focus();
+           // Forma.Focus();
             svetlo = NapraviRGB(255, 189, 89);
             NapraviBoje();
             NapraviSvetla();
@@ -229,6 +229,14 @@ namespace Enigma
             animacija = new EnigmaIspodHaube(this);
             this.Visibility = Visibility.Hidden;
             animacija.ShowDialog();
+            this.Visibility = Visibility.Visible;
+        }
+
+        private void OtvaranjeObjasnjenja(object sender, RoutedEventArgs e)
+        {
+            this.Visibility = Visibility.Hidden;
+            Objasnjenje O = new Objasnjenje();
+            O.ShowDialog();
             this.Visibility = Visibility.Visible;
         }
         private void TastaturaKlik(object sender, RoutedEventArgs e)

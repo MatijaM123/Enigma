@@ -51,7 +51,7 @@
 
         <DockPanel HorizontalAlignment="Left">
 
-            <Button x:Name="Enigma" Content="Enigma" Width="150" HorizontalAlignment="Left" Margin="50,0,0,0" Background="#FFCFFFCF" FontSize="18"/>
+            <Button x:Name="Enigma" Content="Enigma" Width="150" HorizontalAlignment="Left" Margin="50,0,0,0" Background="#FFCFFFCF" FontSize="18" Click="OtvaranjeObjasnjenja"/>
 
             <Rectangle Width="118"></Rectangle>
             <Button x:Name="R1S" Content="A" HorizontalAlignment="Left" Height="45" VerticalAlignment="Top" Width="20"  Background="White" Click="PomeriRotor"/>
