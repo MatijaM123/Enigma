@@ -239,5 +239,16 @@ namespace Enigma
             nesifrovaniTekst.Text += t.Content.ToString()[0];
             sifrovaniTekst.Text += x;
         }
+
+        private void FizickaTastaturaKlik(object sender, KeyEventArgs e)
+        {
+            if (e.Key.ToString().Length == 1)
+            {
+                char x = enigma.Sifruj(e.Key.ToString()[0]);
+                Oboj(x);
+                nesifrovaniTekst.Text += e.Key.ToString()[0];
+                sifrovaniTekst.Text += x;
+            }
+        }
     }
 }
