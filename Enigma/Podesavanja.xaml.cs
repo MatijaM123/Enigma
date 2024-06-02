@@ -32,7 +32,9 @@ namespace Enigma
 
         private void OK_Click(object sender, RoutedEventArgs e)
         {
-            
+            Main.R1S.Content = cbx_pozicija1.Text;
+            Main.R2S.Content = cbx_pozicija2.Text;
+            Main.R3S.Content = cbx_pozicija3.Text;
             Close();
         }
     }
