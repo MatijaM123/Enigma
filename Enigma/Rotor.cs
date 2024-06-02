@@ -9,6 +9,7 @@ namespace Enigma
     internal class Rotor : ISifrovanje
     {
         List<char> elementi = new List<char>();
+        public char ObrtniZarez {  get; private set; }
         public char Sifruj(char x, bool SuprotniSmer = false) => SuprotniSmer?(char)('A'+elementi.IndexOf(x)):elementi[x - 'A'];
     }
 }
