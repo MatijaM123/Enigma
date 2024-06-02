@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Drawing;
 using System.Windows.Shapes;
+using System.IO;
 using System.Threading;
 
 
@@ -36,11 +37,13 @@ namespace Enigma
         Plugboard plugboard = new Plugboard();
         SolidColorBrush[] boje = new SolidColorBrush[13];
         Ellipse[] svetla = new Ellipse[26];
+        object pocetniIzgledSvetla;
         private void Load(object sender, RoutedEventArgs e)
         {
             svetlo = NapraviRGB(255, 189, 89);
             NapraviBoje();
             NapraviSvetla();
+            pocetniIzgledSvetla = (RadialGradientBrush)As.Fill;
         }
         private void NapraviSvetla()
         {
@@ -98,8 +101,8 @@ namespace Enigma
         }
         public async void BojiBelo(char e)
         {
-            await Task.Delay(2000);
-            svetla[e - 'A'].Fill = new SolidColorBrush(NapraviRGB(255, 255, 255));
+            await Task.Delay(500);
+            svetla[e - 'A'].Fill = (Brush)pocetniIzgledSvetla;
         }
         private void Oboj(char e)
         {
@@ -212,16 +215,8 @@ namespace Enigma
             char[] pom = sender.ToString().ToCharArray();
             Button s = (Button)sender;
             trenutnoSlovoPlug = pom[pom.Length - 1];
-            if (s.Background.ToString().Equals(NapraviRGB(255, 255, 255).ToString()))
-            {
-                s.Background = boje[brojacBoja / 2];
-                brojacBoja++;
-            }
-            else
-            {
-                s.Background = new SolidColorBrush(NapraviRGB(255, 255, 255));
-                brojacBoja--;
-            }
+            s.Background = boje[brojacBoja / 2];
+            brojacBoja++;
             plugboard.KlikSlovo(trenutnoSlovoPlug);
             Oboj(trenutnoSlovoPlug);
         }
@@ -239,6 +234,16 @@ namespace Enigma
             {
                 R3D.Content = "Z";
             }
+        }
+
+        private void KoraciSifrovanja(object sender, RoutedEventArgs e)
+        {
+            SaveFileDialog s = new SaveFileDialog();
+            s.FileName = "Koraci sifrovanja.txt";
+            s.ShowDialog();
+            StreamWriter sw = new StreamWriter(s.FileName);
+            sw.WriteLine("Unos -> Plugboard -> Rotor I -> Rotor II -> Rotor III -> Reflektor -> Rotor III -> Rotor II -> Rotor I -> Plugboard -> Svetlo");
+            sw.Close();
         }
     }
 }
