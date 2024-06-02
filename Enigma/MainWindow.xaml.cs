@@ -30,6 +30,10 @@ namespace Enigma
             Loaded += Load;
             InitializeComponent();
         }
+        internal EnigmaMasina enigma;
+        List<char> pozicije = new List<char>();
+        List<Rotor> rotori;
+        Reflektor reflektor;
         Podesavanja podesavanja;
         EnigmaIspodHaube animacija;
         Color svetlo = new Color();
@@ -45,6 +49,16 @@ namespace Enigma
             NapraviBoje();
             NapraviSvetla();
             pocetniIzgledSvetla = (RadialGradientBrush)As.Fill;
+
+             rotori = new List<Rotor>();
+            rotori.Add(new Rotor(1));
+            pozicije.Add('A');
+            rotori.Add(new Rotor(2));
+            pozicije.Add('A');
+            rotori.Add(new Rotor(3));
+            pozicije.Add('A');
+            reflektor = new Reflektor(0);
+            enigma = new EnigmaMasina(rotori, reflektor, plugboard, pozicije);
         }
         private void NapraviSvetla()
         {
@@ -110,7 +124,6 @@ namespace Enigma
             svetla[e - 'A'].Fill = new SolidColorBrush(svetlo);
             BojiBelo(e);
         }
-
         private void PomeriRotor(object sender, RoutedEventArgs e)
         {
             Button button = (Button)sender;
@@ -213,7 +226,7 @@ namespace Enigma
         }
         private void KoraciSifrovanja(object sender, RoutedEventArgs e)
         {
-            animacija = new EnigmaIspodHaube();
+            animacija = new EnigmaIspodHaube(this);
             this.Visibility = Visibility.Hidden;
             animacija.ShowDialog();
             this.Visibility = Visibility.Visible;

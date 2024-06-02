@@ -21,11 +21,22 @@ namespace Enigma
     /// </summary>
     public partial class EnigmaIspodHaube : Window
     {
-        public EnigmaIspodHaube()
+        List<Canvas> rotorskiCanvasi = new List<Canvas>();
+        public EnigmaIspodHaube(MainWindow Main)
         {
+            this.Main = Main;
             InitializeComponent();
+            Loaded += Load;
         }
+        private void Load(object sender, RoutedEventArgs e)
+        {
+            rotorskiCanvasi.Add(Rotor1Canvas);
+            rotorskiCanvasi.Add(Rotor2Canvas);
+            rotorskiCanvasi.Add(Rotor3Canvas);
+            Main.enigma.NacrtajEnigmu(rotorskiCanvasi,ReflectorCanvas, PlugboardCanvas);
 
+        }
+        private MainWindow Main { get; set; }
         private void SacuvajFajl(object sender, RoutedEventArgs e)
         {
             SaveFileDialog s = new SaveFileDialog();
