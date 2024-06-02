@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Enigma"
         mc:Ignorable="d"
-        Title="Podesavanja" Height="300" Width="735" ResizeMode="NoResize" ShowInTaskbar="False" Topmost="True" Opacity="0.9" WindowStyle="None" Background="#FF7B7B7B" AllowsTransparency="True">
+        Title="Podesavanja" Height="300" Width="735" ResizeMode="NoResize" ShowInTaskbar="False" Opacity="0.9" WindowStyle="None" Background="#FF7B7B7B" AllowsTransparency="True">
     <Grid>
         <Button x:Name="OK" Content="Potvrdi" HorizontalAlignment="Left" Margin="167,252,0,0" VerticalAlignment="Top" Height="38" Width="169" Click="OK_Click" FontSize="17"/>
         <Button x:Name="Ponisti" Content="Poništi" HorizontalAlignment="Left" Margin="399,252,0,0" VerticalAlignment="Top" Height="38" Width="169" Click="Ponisti_Click" FontSize="17"/>

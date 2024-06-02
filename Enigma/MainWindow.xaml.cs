@@ -31,6 +31,8 @@ namespace Enigma
             InitializeComponent();
         }
         internal EnigmaMasina enigma;
+        public int Rotor1, Rotor2, Rotor3;
+        public int SacuvajReflektor;
         List<char> pozicije = new List<char>();
         List<Rotor> rotori;
         Reflektor reflektor;
@@ -50,7 +52,9 @@ namespace Enigma
             NapraviBoje();
             NapraviSvetla();
             pocetniIzgledSvetla = (RadialGradientBrush)As.Fill;
-
+            Rotor1 = 1;
+            Rotor2 = 2;
+            Rotor3 = 3;
             rotori = new List<Rotor>();
             rotori.Add(new Rotor(1));
             pozicije.Add('A');
@@ -137,6 +141,11 @@ namespace Enigma
                 podesavanja.cbx_pozicija2.SelectedIndex = Convert.ToInt32(char.Parse(R2S.Content.ToString())) - 65;
                 podesavanja.cbx_pozicija3.SelectedIndex = Convert.ToInt32(char.Parse(R3S.Content.ToString())) - 65;
                 podesavanja.Main = this;
+                podesavanja.Owner = this;
+                podesavanja.cbx_rotor1.SelectedIndex = Rotor1 - 1;
+                podesavanja.cbx_rotor2.SelectedIndex = Rotor2 - 1;
+                podesavanja.cbx_rotor3.SelectedIndex = Rotor3 - 1;
+                podesavanja.cbx_reflektor.SelectedIndex = SacuvajReflektor;
                 podesavanja.Show();
                 podesavanja.Left = Left;
                 podesavanja.Top = Top + 50;
