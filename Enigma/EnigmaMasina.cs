@@ -23,16 +23,20 @@ namespace Enigma
             int t = x;
             for (int i = 0; i < rotori.Count; i++)
             {
+                sb.Append((char)((t + Pozicije[i] - 'A' - 'A') % 26 + 'A'));
                 sb.Append(x = rotori[i].Sifruj((char)((t + Pozicije[i] - 'A' - 'A') % 26 + 'A')));
                 t = (x - Pozicije[i] + 26) % 26 + 'A';
             }
-            x = reflektor.Sifruj((char)t);
+            sb.Append((char)t);
+            sb.Append(x = reflektor.Sifruj((char)t));
             t = x;
-            for (int i = 0; i < rotori.Count; i++)
+            for (int i = rotori.Count-1; i >=0 ; i--)
             {
+                sb.Append((char)((t + Pozicije[i] - 'A' - 'A') % 26 + 'A'));
                 sb.Append(x = rotori[i].Sifruj((char)((t + Pozicije[i] - 'A' - 'A') % 26 + 'A'), true));
                 t = (x - Pozicije[i] + 26) % 26 + 'A';
             }
+            sb.Append((char)t);
             sb.Append(x = plugboard.Sifruj((char)t));
             TokSifrovanja = sb.ToString();
             return x;

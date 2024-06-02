@@ -54,13 +54,67 @@ namespace Enigma
             Iscrtaj();
             //t.Background = Brushes.AliceBlue;
             NacrtajPutanju();
+            
         }
 
         private void NacrtajPutanju()
         {
-            
+            string s = Main.enigma.TokSifrovanja;
+            List<Point> tacke = new List<Point>();
+            Canvas C = PlugboardCanvas;
+            NacrtajKvadraticSaSlovom(C, C.Width - C.Height / 26, C.Height - (s[0] - 'A' + 1) * C.Height / 26, ((char)((s[0] - 'A' + 26) % 26 + 'A')).ToString(), Brushes.Aqua);
+            NacrtajKvadraticSaSlovom(C, 0, C.Height - (s[1]-'A' + 1) * C.Height / 26, ((char)((s[1] - 'A' + 26) % 26 + 'A')).ToString(),Brushes.Aqua);
+            for (int i = 0; i < 3; i++)
+            {
+                C = i == 1 ? Rotor2Canvas : i == 2 ? Rotor3Canvas : Rotor1Canvas;
+                NacrtajKvadraticSaSlovom(C, 0, C.Height - (s[2+2*i] - 'A' + 1) * C.Height / 26, ((char)((s[2 + 2* i] - 'A' + Main.enigma.Pozicije[i] - 'A' + 26) % 26 + 'A')).ToString(), Brushes.Aqua);
+                NacrtajKvadraticSaSlovom(C, C.Width - C.Height / 26, C.Height - (s[3 + 2 * i] - 'A' + 1) * C.Height / 26, ((char)((s[3 + 2 * i] - 'A' + Main.enigma.Pozicije[i] - 'A' + 26) % 26 + 'A')).ToString(), Brushes.Aqua);
+            }
         }
+        protected void NacrtajKvadraticSaSlovom(Canvas c, double x, double y, string slovo,Brush b)
+        {
+            Rectangle rect = new Rectangle
+            {
+                Width = c.Height / 26,
+                Height = c.Height / 26,
+                Fill = b,
+                Stroke = Brushes.Black,
+                StrokeThickness = 1
+            };
+            Canvas.SetLeft(rect, x);
+            Canvas.SetTop(rect, y);
+            c.Children.Add(rect);
 
+            TextBlock tb = new TextBlock
+            {
+                Text = slovo,
+                Width = c.Height / 26,
+                Height = c.Height / 26,
+                TextAlignment = TextAlignment.Center,
+                VerticalAlignment = VerticalAlignment.Bottom,
+                Margin = new Thickness(0, 5, 0, 0)
+            };
+            Canvas.SetLeft(tb, x);
+            Canvas.SetTop(tb, y);
+            c.Children.Add(tb);
+        }
+        protected void NacrtajLinijeIzmedjuKvadratica(Canvas c, char[] slova,Brush b, char TrSlovo = 'A')
+        {
+            // Simple example to draw lines between letters (A to Z, B to Y, ...)
+            for (int i = 0; i < slova.Length; i++)
+            {
+                Line line = new Line
+                {
+                    X1 = (c.Height / 26) + 2,
+                    Y1 = c.Height - ((slova[i] - TrSlovo + 26) % 26) * (c.Height / 26) - c.Height / 52,
+                    X2 = c.Width - 2 - c.Height / 26,
+                    Y2 = c.Height - ((26 - TrSlovo + 'A' + i) % 26) * (c.Height / 26) - c.Height / 52,
+                    Stroke = b,
+                    StrokeThickness = 1
+                };
+                c.Children.Add(line);
+            }
+        }
         private void PomeriRotor(object sender, RoutedEventArgs e)
         {
             Button t = (Button)sender;
