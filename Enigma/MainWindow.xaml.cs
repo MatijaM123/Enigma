@@ -45,12 +45,13 @@ namespace Enigma
         object pocetniIzgledSvetla;
         private void Load(object sender, RoutedEventArgs e)
         {
+            Forma.Focus();
             svetlo = NapraviRGB(255, 189, 89);
             NapraviBoje();
             NapraviSvetla();
             pocetniIzgledSvetla = (RadialGradientBrush)As.Fill;
 
-             rotori = new List<Rotor>();
+            rotori = new List<Rotor>();
             rotori.Add(new Rotor(1));
             pozicije.Add('A');
             rotori.Add(new Rotor(2));
