@@ -28,13 +28,13 @@
         <TextBlock Grid.Row="0" Grid.Column="3" Text="ROTOR I" HorizontalAlignment="Center" FontSize="20"/>
         <TextBlock Grid.Row="0" Grid.Column="4" Text="PLUGBOARD" HorizontalAlignment="Center" FontSize="20"/>
 
-        <Button x:Name="Rotor3Up" Content="🢁" VerticalContentAlignment="Top" HorizontalContentAlignment="Center" Grid.Column="1" Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Center" Height="15" Width="15" FontSize="10" FontWeight="Heavy"/>
-        <Button x:Name="Rotor2Up" Content="🢁" VerticalContentAlignment="Top" HorizontalContentAlignment="Center" Grid.Column="2" Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Center" Height="15" Width="15" FontSize="10" FontWeight="Heavy"/>
-        <Button x:Name="Rotor1Up" Content="🢁" VerticalContentAlignment="Top" HorizontalContentAlignment="Center" Grid.Column="3" Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Center" Height="15" Width="15" FontSize="10" FontWeight="Heavy"/>
+        <Button x:Name="R3U" Uid ="0" Click ="PomeriRotor" Content="🢁" VerticalContentAlignment="Top" HorizontalContentAlignment="Center" Grid.Column="1" Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Center" Height="15" Width="15" FontSize="10" FontWeight="Heavy"/>
+        <Button x:Name="R2U" Click ="PomeriRotor" Content="🢁" VerticalContentAlignment="Top" HorizontalContentAlignment="Center" Grid.Column="2" Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Center" Height="15" Width="15" FontSize="10" FontWeight="Heavy"/>
+        <Button x:Name="R1U" Click ="PomeriRotor" Content="🢁" VerticalContentAlignment="Top" HorizontalContentAlignment="Center" Grid.Column="3" Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Center" Height="15" Width="15" FontSize="10" FontWeight="Heavy"/>
 
-        <Button x:Name="Rotor3Down" Content="🢃" VerticalContentAlignment="Top" HorizontalContentAlignment="Center" Grid.Column="1" Grid.Row="3" VerticalAlignment="Top" HorizontalAlignment="Center" Height="15" Width="15" FontSize="10" FontWeight="Heavy"/>
-        <Button x:Name="Rotor2Down" Content="🢃" VerticalContentAlignment="Top" HorizontalContentAlignment="Center" Grid.Column="2" Grid.Row="3" VerticalAlignment="Top" HorizontalAlignment="Center" Height="15" Width="15" FontSize="10" FontWeight="Heavy"/>
-        <Button x:Name="Rotor1Down" Content="🢃" VerticalContentAlignment="Top" HorizontalContentAlignment="Center" Grid.Column="3" Grid.Row="3" VerticalAlignment="Top" HorizontalAlignment="Center" Height="15" Width="15" FontSize="10" FontWeight="Heavy"/>
+        <Button x:Name="R3D" Click ="PomeriRotor" Content="🢃" VerticalContentAlignment="Top" HorizontalContentAlignment="Center" Grid.Column="1" Grid.Row="3" VerticalAlignment="Top" HorizontalAlignment="Center" Height="15" Width="15" FontSize="10" FontWeight="Heavy"/>
+        <Button x:Name="R2D" Click ="PomeriRotor" Content="🢃" VerticalContentAlignment="Top" HorizontalContentAlignment="Center" Grid.Column="2" Grid.Row="3" VerticalAlignment="Top" HorizontalAlignment="Center" Height="15" Width="15" FontSize="10" FontWeight="Heavy"/>
+        <Button x:Name="R1D" Click ="PomeriRotor" Content="🢃" VerticalContentAlignment="Top" HorizontalContentAlignment="Center" Grid.Column="3" Grid.Row="3" VerticalAlignment="Top" HorizontalAlignment="Center" Height="15" Width="15" FontSize="10" FontWeight="Heavy"/>
 
         <TextBlock Text="A" x:Name="Rotor3TrSlovo" Margin="10" Grid.Column="1" Grid.Row="4" VerticalAlignment="Top" HorizontalAlignment="Center" Height="50" Width="160" FontSize="36" FontWeight="Heavy" TextAlignment="Center" Background="LightGray"/>
         <TextBlock Text="A" x:Name="Rotor2TrSlovo" Margin="10" Grid.Column="2" Grid.Row="4" VerticalAlignment="Top" HorizontalAlignment="Center" Height="50" Width="160" FontSize="36" FontWeight="Heavy" TextAlignment="Center" Background="LightGray"/>
@@ -99,38 +99,38 @@
             <Viewbox Stretch="Uniform" Grid.Row="1" Width="360" VerticalAlignment="Top" Margin="0,0,10,0">
                 <DockPanel LastChildFill="True" VerticalAlignment="Center">
                     <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" HorizontalAlignment="Center" Margin="5">
-                        <Button Content="Q" Width="50" Height="50" Margin="2"/>
-                        <Button Content="W" Width="50" Height="50" Margin="2"/>
-                        <Button Content="E" Width="50" Height="50" Margin="2"/>
-                        <Button Content="R" Width="50" Height="50" Margin="2"/>
-                        <Button Content="T" Width="50" Height="50" Margin="2"/>
-                        <Button Content="Y" Width="50" Height="50" Margin="2"/>
-                        <Button Content="U" Width="50" Height="50" Margin="2"/>
-                        <Button Content="I" Width="50" Height="50" Margin="2"/>
-                        <Button Content="O" Width="50" Height="50" Margin="2"/>
+                        <Button Content="Q" Width="50" Height="50" Margin="2" Click ="TastaturaKlik"/>
+                        <Button Content="W" Width="50" Height="50" Margin="2" Click ="TastaturaKlik"/>
+                        <Button Content="E" Width="50" Height="50" Margin="2" Click ="TastaturaKlik"/>
+                        <Button Content="R" Width="50" Height="50" Margin="2" Click ="TastaturaKlik"/>
+                        <Button Content="T" Width="50" Height="50" Margin="2" Click ="TastaturaKlik"/>
+                        <Button Content="Y" Width="50" Height="50" Margin="2" Click ="TastaturaKlik"/>
+                        <Button Content="U" Width="50" Height="50" Margin="2" Click ="TastaturaKlik"/>
+                        <Button Content="I" Width="50" Height="50" Margin="2" Click ="TastaturaKlik"/>
+                        <Button Content="O" Width="50" Height="50" Margin="2" Click ="TastaturaKlik"/>
                     </StackPanel>
 
                     <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" HorizontalAlignment="Center" Margin="5">
-                        <Button Content="A" Width="50" Height="50" Margin="2"/>
-                        <Button Content="S" Width="50" Height="50" Margin="2"/>
-                        <Button Content="D" Width="50" Height="50" Margin="2"/>
-                        <Button Content="F" Width="50" Height="50" Margin="2"/>
-                        <Button Content="G" Width="50" Height="50" Margin="2"/>
-                        <Button Content="H" Width="50" Height="50" Margin="2"/>
-                        <Button Content="J" Width="50" Height="50" Margin="2"/>
-                        <Button Content="K" Width="50" Height="50" Margin="2"/>
+                        <Button Content="A" Width="50" Height="50" Margin="2" Click ="TastaturaKlik"/>
+                        <Button Content="S" Width="50" Height="50" Margin="2" Click ="TastaturaKlik"/>
+                        <Button Content="D" Width="50" Height="50" Margin="2" Click ="TastaturaKlik"/>
+                        <Button Content="F" Width="50" Height="50" Margin="2" Click ="TastaturaKlik"/>
+                        <Button Content="G" Width="50" Height="50" Margin="2" Click ="TastaturaKlik"/>
+                        <Button Content="H" Width="50" Height="50" Margin="2" Click ="TastaturaKlik"/>
+                        <Button Content="J" Width="50" Height="50" Margin="2" Click ="TastaturaKlik"/>
+                        <Button Content="K" Width="50" Height="50" Margin="2" Click ="TastaturaKlik"/>
                     </StackPanel>
 
                     <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" HorizontalAlignment="Center" Margin="5">
-                        <Button Content="Z" Width="50" Height="50" Margin="2"/>
-                        <Button Content="X" Width="50" Height="50" Margin="2"/>
-                        <Button Content="C" Width="50" Height="50" Margin="2"/>
-                        <Button Content="V" Width="50" Height="50" Margin="2"/>
-                        <Button Content="B" Width="50" Height="50" Margin="2"/>
-                        <Button Content="N" Width="50" Height="50" Margin="2"/>
-                        <Button Content="M" Width="50" Height="50" Margin="2"/>
-                        <Button Content="K" Width="50" Height="50" Margin="2"/>
-                        <Button Content="L" Width="50" Height="50" Margin="2"/>
+                        <Button Content="Z" Width="50" Height="50" Margin="2" Click ="TastaturaKlik"/>
+                        <Button Content="X" Width="50" Height="50" Margin="2" Click ="TastaturaKlik"/>
+                        <Button Content="C" Width="50" Height="50" Margin="2" Click ="TastaturaKlik"/>
+                        <Button Content="V" Width="50" Height="50" Margin="2" Click ="TastaturaKlik"/>
+                        <Button Content="B" Width="50" Height="50" Margin="2" Click ="TastaturaKlik"/>
+                        <Button Content="N" Width="50" Height="50" Margin="2" Click ="TastaturaKlik"/>
+                        <Button Content="M" Width="50" Height="50" Margin="2" Click ="TastaturaKlik"/>
+                        <Button Content="K" Width="50" Height="50" Margin="2" Click ="TastaturaKlik"/>
+                        <Button Content="L" Width="50" Height="50" Margin="2" Click ="TastaturaKlik"/>
                     </StackPanel>
                 </DockPanel>
             </Viewbox>

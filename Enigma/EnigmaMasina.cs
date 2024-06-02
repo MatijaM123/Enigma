@@ -43,7 +43,7 @@ namespace Enigma
             for (int i = 0; i < rotori.Count; i++)
             {
                 char x = Pozicije[i];
-                Pozicije[i] = (char)((Pozicije[i] + 1) % 26 + 'A');
+                Pozicije[i] = (char)((Pozicije[i] + 1 -'A') % 26 + 'A');
                 if (x != rotori[i].ObrtniZarez) break;
             }
         }
