@@ -45,6 +45,7 @@ namespace Enigma
         SolidColorBrush[] boje = new SolidColorBrush[13];
         Ellipse[] svetla = new Ellipse[26];
         object pocetniIzgledSvetla;
+        public StreamWriter sw = new StreamWriter("Koraci sifrovanja.txt");
         private void Load(object sender, RoutedEventArgs e)
         {
             // Forma.Focus();
@@ -268,7 +269,16 @@ namespace Enigma
 
             R1G.Content = (char)((enigma.Pozicije[2] + 1 + 26 - 'A') % 26 + 'A');
             R1S.Content = enigma.Pozicije[2];
-            R1D.Content = (char)((enigma.Pozicije[2] - 1 + 26 - 'A') % 26 + 'A');
+            R1D.Content = (char)((enigma.Pozicije[2] - 1 + 26 - 'A') % 26 + 'A'); 
+            sw.WriteLine("Unos -> Plugboard -> Rotor I -> Rotor II -> Rotor III -> Reflektor -> Rotor III -> Rotor II -> Rotor I -> Plugboard -> Svetlo");
+            StringBuilder sr = new StringBuilder();
+            for (int i = 0; i < enigma.TokSifrovanja.Length; i += 2)
+            {
+                sr.Append(enigma.TokSifrovanja[i]);
+                sr.Append(" -> ");
+            }
+            sw.WriteLine(sr.ToString());
+            sw.Close();
         }
 
         private void FizickaTastaturaKlik(object sender, KeyEventArgs e)
@@ -290,6 +300,15 @@ namespace Enigma
                 R1G.Content = (char)((enigma.Pozicije[2] + 1 + 26 - 'A') % 26 + 'A');
                 R1S.Content = enigma.Pozicije[2];
                 R1D.Content = (char)((enigma.Pozicije[2] - 1 + 26 - 'A') % 26 + 'A');
+                sw.WriteLine("Unos -> Plugboard -> Rotor I -> Rotor II -> Rotor III -> Reflektor -> Rotor III -> Rotor II -> Rotor I -> Plugboard -> Svetlo");
+                StringBuilder sr = new StringBuilder();
+                for (int i = 0; i < enigma.TokSifrovanja.Length; i += 2)
+                {
+                    sr.Append(enigma.TokSifrovanja[i]);
+                    sr.Append(" -> ");
+                }
+                sw.WriteLine(sr.ToString());
+                sw.Close();
             }
         }
     }
