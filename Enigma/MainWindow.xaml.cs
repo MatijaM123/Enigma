@@ -231,5 +231,13 @@ namespace Enigma
             animacija.ShowDialog();
             this.Visibility = Visibility.Visible;
         }
+
+        private void OtvaranjeObjasnjenja(object sender, RoutedEventArgs e)
+        {
+            this.Visibility = Visibility.Hidden;
+            Objasnjenje O = new Objasnjenje();
+            O.ShowDialog();
+            this.Visibility = Visibility.Visible;
+        }
     }
 }
