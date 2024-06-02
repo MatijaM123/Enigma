@@ -45,7 +45,7 @@ namespace Enigma
         object pocetniIzgledSvetla;
         private void Load(object sender, RoutedEventArgs e)
         {
-            Forma.Focus();
+           // Forma.Focus();
             svetlo = NapraviRGB(255, 189, 89);
             NapraviBoje();
             NapraviSvetla();
