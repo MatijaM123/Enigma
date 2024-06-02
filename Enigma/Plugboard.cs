@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 
 namespace Enigma
 {
-    internal class Plugboard : ISifrovanje
+    internal class Plugboard : ElementEnigme,ISifrovanje
     {
         public char[] Izlazna { get; private set; }
         char kliknuto; // slovo koje je kliknuto
@@ -45,6 +46,25 @@ namespace Enigma
         public char Sifruj(char x, bool smer = false)
         {
             return Izlazna[x - 'A'];
+        }
+
+        protected override void NacrtajElement(Canvas C)
+        {
+            char[] slova = ParsirajIzlazniNiz(Izlazna);
+            NacrtajKvadratice(C);
+            NacrtajLinijeIzmedjuKvadratica(C, slova);
+        }
+        public void NacrtajPlugboard(Canvas C)
+        {
+            NacrtajElement(C);
+        }
+        private char[] ParsirajIzlazniNiz(char[] izlazna)
+        {
+            char[] x = new char[izlazna.Length];
+            for (int i = 0; i < x.Length; i++)
+                if (izlazna[i] == '.') x[i] = (char)('A' + i);
+                else x[i] = Izlazna[i];
+            return x;
         }
     }
 }

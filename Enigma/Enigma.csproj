@@ -55,6 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ElementEnigme.cs" />
     <Compile Include="EnigmaIspodHaube.xaml.cs">
       <DependentUpon>EnigmaIspodHaube.xaml</DependentUpon>
     </Compile>

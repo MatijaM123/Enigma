@@ -212,6 +212,10 @@ namespace Enigma
         }
         private void KoraciSifrovanja(object sender, RoutedEventArgs e)
         {
+            EnigmaIspodHaube W = new EnigmaIspodHaube();
+            this.Visibility = Visibility.Hidden;
+            W.ShowDialog();
+            this.Visibility = Visibility.Visible;
             SaveFileDialog s = new SaveFileDialog();
             s.FileName = "Koraci sifrovanja.txt";
             s.ShowDialog();

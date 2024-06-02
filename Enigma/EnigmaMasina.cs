@@ -62,7 +62,12 @@ namespace Enigma
         }
         public void NacrtajEnigmu(List<Canvas> rotoriPlatna, Canvas reflektorPlatno, Canvas plugboardPlatno)
         {
-
+            if (rotoriPlatna.Count != rotori.Count)
+                throw new Exception("Unet razlicit broj Canvasa od broja rotora.");
+            for (int i = 0; i < rotori.Count; i++)
+                rotori[i].NacrtajRotor(rotoriPlatna[i],Pozicije[i]);
+            reflektor.NacrtajReflektor(reflektorPlatno);
+            plugboard.NacrtajPlugboard(plugboardPlatno);
         }
     }
 }
