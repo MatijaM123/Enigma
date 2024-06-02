@@ -107,89 +107,79 @@ namespace Enigma
             BojiBelo(e);
         }
 
-        private void R3D_Click(object sender, RoutedEventArgs e) //TreciRotor, Dole
+        private void PomeriRotor(object sender, RoutedEventArgs e)
         {
-            string originalDole = R3D.Content.ToString();
-            R3D.Content = R3S.Content;
-            R3S.Content = R3G.Content;
-            if (originalDole != "X")
+            Button button = (Button)sender;
+            int rotorID = int.Parse(button.Name[1].ToString());
+            char pravac = button.Name[2];
+            if (pravac == 'S')
             {
-                R3G.Content = (char)(Convert.ToChar(R3G.Content) + 1);
+                podesavanja = new Podesavanja();
+                podesavanja.cbx_zarez1.SelectedIndex = 0;
+                podesavanja.cbx_zarez2.SelectedIndex = 0;
+                podesavanja.cbx_zarez3.SelectedIndex = 0;
+                podesavanja.cbx_pozicija1.SelectedIndex = 0;
+                podesavanja.cbx_pozicija2.SelectedIndex = 0;
+                podesavanja.cbx_pozicija3.SelectedIndex = 0;
+                podesavanja.Main = this;
+                podesavanja.Show();
+                podesavanja.Left = Left;
+                podesavanja.Top = Top + 50;
             }
             else
             {
-                R3G.Content = "A";
+                Button gornjeDugme = null;
+                Button donjeDugme = null;
+                Button srednjeDugme = null;
+                if (rotorID == 1)
+                {
+                    gornjeDugme = R1G;
+                    donjeDugme = R1D;
+                    srednjeDugme = R1S;
+                }
+                else if (rotorID == 2)
+                {
+                    gornjeDugme = R2G;
+                    donjeDugme = R2D;
+                    srednjeDugme = R2S;
+                }
+                else if (rotorID == 3)
+                {
+                    gornjeDugme = R3G;
+                    donjeDugme = R3D;
+                    srednjeDugme = R3S;
+                }
+                if (pravac == 'D')
+                {
+                    string originalDole = donjeDugme.Content.ToString();
+                    donjeDugme.Content = srednjeDugme.Content;
+                    srednjeDugme.Content = gornjeDugme.Content;
+                    if (originalDole != "X")
+                    {
+                        gornjeDugme.Content = (char)(Convert.ToChar(gornjeDugme.Content) + 1);
+                    }
+                    else
+                    {
+                        gornjeDugme.Content = "A";
+                    }
+                }
+                else if (pravac == 'G')
+                {
+                    string originalGore = gornjeDugme.Content.ToString();
+                    gornjeDugme.Content = srednjeDugme.Content;
+                    srednjeDugme.Content = donjeDugme.Content;
+                    if (originalGore != "C")
+                    {
+                        donjeDugme.Content = (char)(Convert.ToChar(donjeDugme.Content) - 1);
+                    }
+                    else
+                    {
+                        donjeDugme.Content = "Z";
+                    }
+                }
             }
-        }
 
-        private void R2G_Click(object sender, RoutedEventArgs e)
-        {
-            string originalGore = R2G.Content.ToString();
-            R2G.Content = R2S.Content;
-            R2S.Content = R2D.Content;
-            if (originalGore != "C")
-            {
-                R2D.Content = (char)(Convert.ToChar(R2D.Content) - 1);
-            }
-            else
-            {
-                R2D.Content = "Z";
-            }
         }
-
-        private void R2D_Click(object sender, RoutedEventArgs e)
-        {
-            string originalDole = R2D.Content.ToString();
-            R2D.Content = R2S.Content;
-            R2S.Content = R2G.Content;
-            if (originalDole != "X")
-            {
-                R2G.Content = (char)(Convert.ToChar(R2G.Content) + 1);
-            }
-            else
-            {
-                R2G.Content = "A";
-            }
-        }
-
-        private void R1G_Click(object sender, RoutedEventArgs e)
-        {
-            string originalGore = R1G.Content.ToString();
-            R1G.Content = R1S.Content;
-            R1S.Content = R1D.Content;
-            if (originalGore != "C")
-            {
-                R1D.Content = (char)(Convert.ToChar(R1D.Content) - 1);
-            }
-            else
-            {
-                R1D.Content = "Z";
-            }
-        }
-
-        private void R1D_Click(object sender, RoutedEventArgs e)
-        {
-            string originalDole = R1D.Content.ToString();
-            R1D.Content = R1S.Content;
-            R1S.Content = R1G.Content;
-            if (originalDole != "X")
-            {
-                R1G.Content = (char)(Convert.ToChar(R1G.Content) + 1);
-            }
-            else
-            {
-                R1G.Content = "A";
-            }
-        }
-
-        private void RS_Click(object sender, RoutedEventArgs e) //Bilo koje srednje dugme rotora
-        {
-            podesavanja = new Podesavanja();
-            podesavanja.Show();
-            podesavanja.Left = Left;
-            podesavanja.Top = Top + 50;
-        }
-
         private void Window_LocationChanged(object sender, EventArgs e)
         {
             if (podesavanja != null)
@@ -224,21 +214,6 @@ namespace Enigma
             }
             plugboard.KlikSlovo(trenutnoSlovoPlug);
             Oboj(trenutnoSlovoPlug);
-        }
-
-        private void R3G_Click(object sender, RoutedEventArgs e) //TreciRotor, Gore
-        {
-            string originalGore = R3G.Content.ToString();
-            R3G.Content = R3S.Content;
-            R3S.Content = R3D.Content;
-            if (originalGore != "C")
-            {
-                R3D.Content = (char)(Convert.ToChar(R3D.Content) - 1);
-            }
-            else
-            {
-                R3D.Content = "Z";
-            }
         }
     }
 }

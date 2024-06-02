@@ -19,6 +19,7 @@ namespace Enigma
     /// </summary>
     public partial class Podesavanja : Window
     {
+        public MainWindow Main;
         public Podesavanja()
         {
             InitializeComponent();
@@ -31,6 +32,7 @@ namespace Enigma
 
         private void OK_Click(object sender, RoutedEventArgs e)
         {
+            
             Close();
         }
     }

@@ -15,7 +15,7 @@
         </DockPanel>
         <DockPanel Width="140" >
             <Rectangle Width="15"></Rectangle>
-            <Button x:Name="R3G" Content="B" Height="45" Width="20" Click="R3G_Click" >
+            <Button x:Name="R3G" Content="B" Height="45" Width="20" Click="PomeriRotor" >
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="Black"/>
@@ -26,7 +26,7 @@
             </Button>
 
             <Rectangle Width="15"></Rectangle>
-            <Button x:Name="R2G" Content="B" HorizontalAlignment="Left" Height="45" VerticalAlignment="Top" Width="20" Click="R2G_Click" >
+            <Button x:Name="R2G" Content="B" HorizontalAlignment="Left" Height="45" VerticalAlignment="Top" Width="20" Click="PomeriRotor" >
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="Black"/>
@@ -37,7 +37,7 @@
             </Button>
 
             <Rectangle Width="15"></Rectangle>
-            <Button x:Name="R1G" Content="B" HorizontalAlignment="Left" Height="45" VerticalAlignment="Top" Width="20" Click="R1G_Click" >
+            <Button x:Name="R1G" Content="B" HorizontalAlignment="Left" Height="45" VerticalAlignment="Top" Width="20" Click="PomeriRotor" >
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="Black"/>
@@ -51,18 +51,18 @@
         <DockPanel Width="140">
 
             <Rectangle Width="15"></Rectangle>
-            <Button x:Name="R3S" Content="A" HorizontalAlignment="Left" Height="45" VerticalAlignment="Top" Width="20"  Background="White" Click="RS_Click"/>
+            <Button x:Name="R3S" Content="A" HorizontalAlignment="Left" Height="45" VerticalAlignment="Top" Width="20"  Background="White" Click="PomeriRotor"/>
 
             <Rectangle Width="15"></Rectangle>
-            <Button x:Name="R2S" Content="A" HorizontalAlignment="Left" Height="45" VerticalAlignment="Top" Width="20"  Background="White" Click="RS_Click"/>
+            <Button x:Name="R2S" Content="A" HorizontalAlignment="Left" Height="45" VerticalAlignment="Top" Width="20"  Background="White" Click="PomeriRotor"/>
 
             <Rectangle Width="15"></Rectangle>
-            <Button x:Name="R1S" Content="A" HorizontalAlignment="Left" Height="45" VerticalAlignment="Top" Width="20"  Background="White" Click="RS_Click"/>
+            <Button x:Name="R1S" Content="A" HorizontalAlignment="Left" Height="45" VerticalAlignment="Top" Width="20"  Background="White" Click="PomeriRotor"/>
         </DockPanel>
 
         <DockPanel Width="140">
             <Rectangle Width="15"></Rectangle>
-            <Button x:Name="R3D" Content="Z" HorizontalAlignment="Left" Height="45"  VerticalAlignment="Top" Width="20" RenderTransformOrigin="1.053,2.301" Click="R3D_Click" >
+            <Button x:Name="R3D" Content="Z" HorizontalAlignment="Left" Height="45"  VerticalAlignment="Top" Width="20" RenderTransformOrigin="1.053,2.301" Click="PomeriRotor" >
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="Black" Offset="1"/>
@@ -73,7 +73,7 @@
             </Button>
 
             <Rectangle Width="15"></Rectangle>
-            <Button x:Name="R2D" Content="Z" HorizontalAlignment="Left" Height="45"  VerticalAlignment="Top" Width="20" RenderTransformOrigin="1.053,2.301" Click="R2D_Click" >
+            <Button x:Name="R2D" Content="Z" HorizontalAlignment="Left" Height="45"  VerticalAlignment="Top" Width="20" RenderTransformOrigin="1.053,2.301" Click="PomeriRotor" >
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="Black" Offset="1"/>
@@ -84,7 +84,7 @@
             </Button>
 
             <Rectangle Width="15"></Rectangle>
-            <Button x:Name="R1D" Content="Z" HorizontalAlignment="Left" Height="45"  VerticalAlignment="Top" Width="20" RenderTransformOrigin="1.053,2.301" Click="R1D_Click" >
+            <Button x:Name="R1D" Content="Z" HorizontalAlignment="Left" Height="45"  VerticalAlignment="Top" Width="20" RenderTransformOrigin="1.053,2.301" Click="PomeriRotor" >
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="Black" Offset="1"/>
