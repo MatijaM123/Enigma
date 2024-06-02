@@ -10,5 +10,194 @@
         <Button x:Name="OK" Content="Potvrdi" HorizontalAlignment="Left" Margin="167,263,0,0" VerticalAlignment="Top" Height="27" Width="169" Click="OK_Click"/>
         <Button x:Name="Ponisti" Content="Poništi" HorizontalAlignment="Left" Margin="399,263,0,0" VerticalAlignment="Top" Height="27" Width="169" Click="Ponisti_Click"/>
         <Label x:Name="PodesavanjaNaslov" Content="            Podešavanja" HorizontalAlignment="Center" Margin="0,11,0,0" VerticalAlignment="Top" Width="225" FontSize="18" FontWeight="Bold"/>
+        <Label x:Name="label3" Content="Rotor III" HorizontalAlignment="Left" Margin="515,67,0,0" VerticalAlignment="Top" Height="26" Width="55"/>
+        <Label x:Name="label2" Content="Rotor II" HorizontalAlignment="Left" Margin="448,67,0,0" VerticalAlignment="Top" Height="26" Width="52"/>
+        <Label x:Name="label1" Content="Rotor I" HorizontalAlignment="Left" Margin="377,67,0,0" VerticalAlignment="Top" Width="50"/>
+        <Label x:Name="rotor" Content="Rotor" HorizontalAlignment="Left" Margin="168,93,0,0" VerticalAlignment="Top" Width="42"/>
+        <Label x:Name="rotor_Copy" Content="Rotor" HorizontalAlignment="Left" Margin="168,119,0,0" VerticalAlignment="Top" Width="42"/>
+        <Label x:Name="rotor_Copy1" Content="Pozicija" HorizontalAlignment="Left" Margin="168,145,0,0" VerticalAlignment="Top" Width="52"/>
+        <ComboBox x:Name="cbx_rotor1" HorizontalAlignment="Left" Margin="377,95,0,0" VerticalAlignment="Top" Width="50">
+            <ComboBoxItem>I</ComboBoxItem>
+            <ComboBoxItem>II</ComboBoxItem>
+            <ComboBoxItem>III</ComboBoxItem>
+        </ComboBox>
+        <ComboBox x:Name="cbx_rotor2" HorizontalAlignment="Left" Margin="451,95,0,0" VerticalAlignment="Top" Width="48">
+            <ComboBoxItem>I</ComboBoxItem>
+            <ComboBoxItem>II</ComboBoxItem>
+            <ComboBoxItem>III</ComboBoxItem>
+        </ComboBox>
+        <ComboBox x:Name="cbx_rotor3" HorizontalAlignment="Left" Margin="519,95,0,0" VerticalAlignment="Top" Width="49">
+            <ComboBoxItem>I</ComboBoxItem>
+            <ComboBoxItem>II</ComboBoxItem>
+            <ComboBoxItem>III</ComboBoxItem>
+        </ComboBox>
+        <ComboBox x:Name="cbx_podesavanje1" HorizontalAlignment="Left" Margin="377,123,0,0" VerticalAlignment="Top" Width="50">
+            <ComboBoxItem>A</ComboBoxItem>
+            <ComboBoxItem>B</ComboBoxItem>
+            <ComboBoxItem>C</ComboBoxItem>
+            <ComboBoxItem>D</ComboBoxItem>
+            <ComboBoxItem>E</ComboBoxItem>
+            <ComboBoxItem>F</ComboBoxItem>
+            <ComboBoxItem>G</ComboBoxItem>
+            <ComboBoxItem>H</ComboBoxItem>
+            <ComboBoxItem>I</ComboBoxItem>
+            <ComboBoxItem>J</ComboBoxItem>
+            <ComboBoxItem>K</ComboBoxItem>
+            <ComboBoxItem>L</ComboBoxItem>
+            <ComboBoxItem>M</ComboBoxItem>
+            <ComboBoxItem>N</ComboBoxItem>
+            <ComboBoxItem>O</ComboBoxItem>
+            <ComboBoxItem>P</ComboBoxItem>
+            <ComboBoxItem>Q</ComboBoxItem>
+            <ComboBoxItem>R</ComboBoxItem>
+            <ComboBoxItem>S</ComboBoxItem>
+            <ComboBoxItem>T</ComboBoxItem>
+            <ComboBoxItem>U</ComboBoxItem>
+            <ComboBoxItem>V</ComboBoxItem>
+            <ComboBoxItem>W</ComboBoxItem>
+            <ComboBoxItem>X</ComboBoxItem>
+            <ComboBoxItem>Y</ComboBoxItem>
+            <ComboBoxItem>Z</ComboBoxItem>
+        </ComboBox>
+        <ComboBox x:Name="cbx_podesavanje2" HorizontalAlignment="Left" Margin="451,123,0,0" VerticalAlignment="Top" Width="48" RenderTransformOrigin="1.696,0.41">
+            <ComboBoxItem Content="A"/>
+            <ComboBoxItem Content="B"/>
+            <ComboBoxItem Content="C"/>
+            <ComboBoxItem Content="D"/>
+            <ComboBoxItem Content="E"/>
+            <ComboBoxItem Content="F"/>
+            <ComboBoxItem Content="G"/>
+            <ComboBoxItem Content="H"/>
+            <ComboBoxItem Content="I"/>
+            <ComboBoxItem Content="J"/>
+            <ComboBoxItem Content="K"/>
+            <ComboBoxItem Content="L"/>
+            <ComboBoxItem Content="M"/>
+            <ComboBoxItem Content="N"/>
+            <ComboBoxItem Content="O"/>
+            <ComboBoxItem Content="P"/>
+            <ComboBoxItem Content="Q"/>
+            <ComboBoxItem Content="R"/>
+            <ComboBoxItem Content="S"/>
+            <ComboBoxItem Content="T"/>
+            <ComboBoxItem Content="U"/>
+            <ComboBoxItem Content="V"/>
+            <ComboBoxItem Content="W"/>
+            <ComboBoxItem Content="X"/>
+            <ComboBoxItem Content="Y"/>
+            <ComboBoxItem Content="Z"/>
+        </ComboBox>
+        <ComboBox x:Name="cbx_podesavanje3" HorizontalAlignment="Left" Margin="519,123,0,0" VerticalAlignment="Top" Width="49" RenderTransformOrigin="1.696,0.41">
+            <ComboBoxItem Content="A"/>
+            <ComboBoxItem Content="B"/>
+            <ComboBoxItem Content="C"/>
+            <ComboBoxItem Content="D"/>
+            <ComboBoxItem Content="E"/>
+            <ComboBoxItem Content="F"/>
+            <ComboBoxItem Content="G"/>
+            <ComboBoxItem Content="H"/>
+            <ComboBoxItem Content="I"/>
+            <ComboBoxItem Content="J"/>
+            <ComboBoxItem Content="K"/>
+            <ComboBoxItem Content="L"/>
+            <ComboBoxItem Content="M"/>
+            <ComboBoxItem Content="N"/>
+            <ComboBoxItem Content="O"/>
+            <ComboBoxItem Content="P"/>
+            <ComboBoxItem Content="Q"/>
+            <ComboBoxItem Content="R"/>
+            <ComboBoxItem Content="S"/>
+            <ComboBoxItem Content="T"/>
+            <ComboBoxItem Content="U"/>
+            <ComboBoxItem Content="V"/>
+            <ComboBoxItem Content="W"/>
+            <ComboBoxItem Content="X"/>
+            <ComboBoxItem Content="Y"/>
+            <ComboBoxItem Content="Z"/>
+        </ComboBox>
+        <ComboBox x:Name="cbx_pozicija1" HorizontalAlignment="Left" Margin="377,150,0,0" VerticalAlignment="Top" Width="50">
+            <ComboBoxItem Content="A"/>
+            <ComboBoxItem Content="B"/>
+            <ComboBoxItem Content="C"/>
+            <ComboBoxItem Content="D"/>
+            <ComboBoxItem Content="E"/>
+            <ComboBoxItem Content="F"/>
+            <ComboBoxItem Content="G"/>
+            <ComboBoxItem Content="H"/>
+            <ComboBoxItem Content="I"/>
+            <ComboBoxItem Content="J"/>
+            <ComboBoxItem Content="K"/>
+            <ComboBoxItem Content="L"/>
+            <ComboBoxItem Content="M"/>
+            <ComboBoxItem Content="N"/>
+            <ComboBoxItem Content="O"/>
+            <ComboBoxItem Content="P"/>
+            <ComboBoxItem Content="Q"/>
+            <ComboBoxItem Content="R"/>
+            <ComboBoxItem Content="S"/>
+            <ComboBoxItem Content="T"/>
+            <ComboBoxItem Content="U"/>
+            <ComboBoxItem Content="V"/>
+            <ComboBoxItem Content="W"/>
+            <ComboBoxItem Content="X"/>
+            <ComboBoxItem Content="Y"/>
+            <ComboBoxItem Content="Z"/>
+        </ComboBox>
+        <ComboBox x:Name="cbx_pozicija2" HorizontalAlignment="Left" Margin="451,150,0,0" VerticalAlignment="Top" Width="48">
+            <ComboBoxItem Content="A"/>
+            <ComboBoxItem Content="B"/>
+            <ComboBoxItem Content="C"/>
+            <ComboBoxItem Content="D"/>
+            <ComboBoxItem Content="E"/>
+            <ComboBoxItem Content="F"/>
+            <ComboBoxItem Content="G"/>
+            <ComboBoxItem Content="H"/>
+            <ComboBoxItem Content="I"/>
+            <ComboBoxItem Content="J"/>
+            <ComboBoxItem Content="K"/>
+            <ComboBoxItem Content="L"/>
+            <ComboBoxItem Content="M"/>
+            <ComboBoxItem Content="N"/>
+            <ComboBoxItem Content="O"/>
+            <ComboBoxItem Content="P"/>
+            <ComboBoxItem Content="Q"/>
+            <ComboBoxItem Content="R"/>
+            <ComboBoxItem Content="S"/>
+            <ComboBoxItem Content="T"/>
+            <ComboBoxItem Content="U"/>
+            <ComboBoxItem Content="V"/>
+            <ComboBoxItem Content="W"/>
+            <ComboBoxItem Content="X"/>
+            <ComboBoxItem Content="Y"/>
+            <ComboBoxItem Content="Z"/>
+        </ComboBox>
+        <ComboBox x:Name="cbx_pozicija3" HorizontalAlignment="Left" Margin="519,150,0,0" VerticalAlignment="Top" Width="49">
+            <ComboBoxItem Content="A"/>
+            <ComboBoxItem Content="B"/>
+            <ComboBoxItem Content="C"/>
+            <ComboBoxItem Content="D"/>
+            <ComboBoxItem Content="E"/>
+            <ComboBoxItem Content="F"/>
+            <ComboBoxItem Content="G"/>
+            <ComboBoxItem Content="H"/>
+            <ComboBoxItem Content="I"/>
+            <ComboBoxItem Content="J"/>
+            <ComboBoxItem Content="K"/>
+            <ComboBoxItem Content="L"/>
+            <ComboBoxItem Content="M"/>
+            <ComboBoxItem Content="N"/>
+            <ComboBoxItem Content="O"/>
+            <ComboBoxItem Content="P"/>
+            <ComboBoxItem Content="Q"/>
+            <ComboBoxItem Content="R"/>
+            <ComboBoxItem Content="S"/>
+            <ComboBoxItem Content="T"/>
+            <ComboBoxItem Content="U"/>
+            <ComboBoxItem Content="V"/>
+            <ComboBoxItem Content="W"/>
+            <ComboBoxItem Content="X"/>
+            <ComboBoxItem Content="Y"/>
+            <ComboBoxItem Content="Z"/>
+        </ComboBox>
     </Grid>
 </Window>
