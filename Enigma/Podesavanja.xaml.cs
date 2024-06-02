@@ -41,6 +41,10 @@ namespace Enigma
             Main.R1D.Content = ProsloSlovo(cbx_pozicija1.Text);
             Main.R2D.Content = ProsloSlovo(cbx_pozicija2.Text);
             Main.R3D.Content = ProsloSlovo(cbx_pozicija3.Text);
+            Main.Rotor1 = cbx_rotor1.SelectedIndex + 1;
+            Main.Rotor2 = cbx_rotor2.SelectedIndex + 1;
+            Main.Rotor3 = cbx_rotor3.SelectedIndex + 1;
+            Main.SacuvajReflektor = cbx_reflektor.SelectedIndex;
             Close();
         }
 
