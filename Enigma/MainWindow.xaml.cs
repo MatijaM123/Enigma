@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Drawing;
 using System.Windows.Shapes;
+using System.Threading;
 
 
 namespace Enigma
@@ -31,22 +32,79 @@ namespace Enigma
         Podesavanja podesavanja;
         Color svetlo = new Color();
         int brojacBoja = 0;
-        string trenutnoSlovoPlug = "";
-        char R3Srednje, R2Srednje, R1Srednje;
+        char trenutnoSlovoPlug = ' ';
+        Plugboard plugboard = new Plugboard();
+        SolidColorBrush[] boje = new SolidColorBrush[13];
+        Ellipse[] svetla = new Ellipse[26];
         private void Load(object sender, RoutedEventArgs e)
         {
-            svetlo.A = 255;
-            svetlo.R = 255;
-            svetlo.G = 189;
-            svetlo.B = 89;
-            R3Srednje = 'A';
-            R2Srednje = 'A';
-            R1Srednje = 'A';
-            Oboj(Qs);
+            svetlo = NapraviRGB(255, 189, 89);
+            NapraviBoje();
+            NapraviSvetla();
         }
-        private void Oboj(Ellipse e )
+        private void NapraviSvetla()
         {
-            e.Fill = new SolidColorBrush(svetlo);
+            svetla[0] = As;
+            svetla[1] = Bs;
+            svetla[2] = Cs;
+            svetla[3] = Ds;
+            svetla[4] = Es;
+            svetla[5] = Fs;
+            svetla[6] = Gs;
+            svetla[7] = Hs;
+            svetla[8] = Is;
+            svetla[9] = Js;
+            svetla[10] = Ks;
+            svetla[11] = Ls;
+            svetla[12] = Ms;
+            svetla[13] = Ns;
+            svetla[14] = Os;
+            svetla[15] = Ps;
+            svetla[16] = Qs;
+            svetla[17] = Rs;
+            svetla[18] = Ss;
+            svetla[19] = Ts;
+            svetla[20] = Us;
+            svetla[21] = Vs;
+            svetla[22] = Ws;
+            svetla[23] = Xs;
+            svetla[24] = Ys;
+            svetla[25] = Zs;
+        }
+        private Color NapraviRGB(byte r, byte g, byte b)
+        {
+            Color boja = new Color();
+            boja.A = 255;
+            boja.R = r;
+            boja.G = g;
+            boja.B = b;
+            return boja;
+        }
+        private void NapraviBoje()
+        {
+            boje[0] = new SolidColorBrush(NapraviRGB(138, 43, 226));
+            boje[1] = new SolidColorBrush(NapraviRGB(255, 0, 0));
+            boje[2] = new SolidColorBrush(NapraviRGB(0, 255, 0));
+            boje[3] = new SolidColorBrush(NapraviRGB(0, 0, 255));
+            boje[4] = new SolidColorBrush(NapraviRGB(186, 85, 211));
+            boje[5] = new SolidColorBrush(NapraviRGB(255, 215, 0));
+            boje[6] = new SolidColorBrush(NapraviRGB(210, 180, 140));
+            boje[7] = new SolidColorBrush(NapraviRGB(0, 255, 255));
+            boje[8] = new SolidColorBrush(NapraviRGB(32, 178, 170));
+            boje[9] = new SolidColorBrush(NapraviRGB(199, 21, 112));
+            boje[10] = new SolidColorBrush(NapraviRGB(255, 69, 0));
+            boje[11] = new SolidColorBrush(NapraviRGB(160, 82, 45));
+            boje[12] = new SolidColorBrush(NapraviRGB(255, 182, 193));
+        }
+        public async void BojiBelo(char e)
+        {
+            await Task.Delay(2000);
+            svetla[e - 'A'].Fill = new SolidColorBrush(NapraviRGB(255, 255, 255));
+        }
+        private void Oboj(char e)
+        {
+            svetla[e - 'A'].Fill = new SolidColorBrush(svetlo);
+            BojiBelo(e);
         }
 
         private void R3D_Click(object sender, RoutedEventArgs e) //TreciRotor, Dole
@@ -151,8 +209,21 @@ namespace Enigma
 
         private void Spoji(object sender, RoutedEventArgs e)
         {
-            string[] pom = sender.ToString().Split();
-            trenutnoSlovoPlug = pom[1];
+            char[] pom = sender.ToString().ToCharArray();
+            Button s = (Button)sender;
+            trenutnoSlovoPlug = pom[pom.Length - 1];
+            if (s.Background.ToString().Equals(NapraviRGB(255, 255, 255).ToString()))
+            {
+                s.Background = boje[brojacBoja / 2];
+                brojacBoja++;
+            }
+            else
+            {
+                s.Background = new SolidColorBrush(NapraviRGB(255, 255, 255));
+                brojacBoja--;
+            }
+            plugboard.KlikSlovo(trenutnoSlovoPlug);
+            Oboj(trenutnoSlovoPlug);
         }
 
         private void R3G_Click(object sender, RoutedEventArgs e) //TreciRotor, Gore
