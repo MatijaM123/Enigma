@@ -19,7 +19,20 @@
                 <RowDefinition Height="1*"></RowDefinition>
             </Grid.RowDefinitions>
             <TextBlock Grid.Row="0" FontSize="50" FontWeight="Bold" Margin="5 5 0 0" Text="Enigma" FontFamily="Comic Sans" TextDecorations="Underline"></TextBlock>
-            <TextBlock Grid.Row="1" FontSize="16" Margin="5 5 0 5" FontFamily="Comic Sans"></TextBlock>
+            <TextBlock Grid.Row="1" FontSize="23" Margin="5 5 0 5" FontFamily="Comic Sans">
+              <Bold>Enigma</Bold> je bila<LineBreak/>
+              mašina za šifro-<LineBreak/>
+              vanje radio-tel<LineBreak/>
+              egrafskih poruka<LineBreak/>
+              upotrebljavana<LineBreak/>
+              za vreme Drugog<LineBreak/>
+              svetskog rata od<LineBreak/>
+              strane Vermahta.<LineBreak/><LineBreak/>
+              Reč <Italic>Enigma</Italic> dola-<LineBreak/>
+              zi iz grčkog jezik-<LineBreak/>
+              a i znači<LineBreak/>
+              "zagonetka".
+            </TextBlock>
             <Button Grid.Row="2" Content="3D Model"></Button>
         </Grid>
         <Grid Grid.Column="1">
@@ -46,6 +59,7 @@
                 <local:Pravougaonik x:Name="Plugboard" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="2" Opacity="0" MouseEnter="Plugboard_MouseEnter" MouseLeave="Plugboard_MouseLeave"></local:Pravougaonik>
                 <local:Pravougaonik x:Name="Keyboard" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="3" Opacity="0" MouseEnter="Keyboard_MouseEnter" MouseLeave="Keyboard_MouseLeave"></local:Pravougaonik>
                 <local:Pravougaonik x:Name="Lampboard" Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="2" Opacity="0" MouseEnter="Lampboard_MouseEnter" MouseLeave="Lampboard_MouseLeave"></local:Pravougaonik>
+              <local:Pravougaonik x:Name="Reflektor" Grid.Column="2" Grid.Row="0" Opacity="0" MouseEnter="Reflektor_MouseEnter" MouseLeave="Reflektor_MouseLeave"></local:Pravougaonik>
             </Grid>
         </Grid>
         <Image Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="Fill" Source="/enigma.png" Panel.ZIndex="-1"/>

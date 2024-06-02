@@ -41,10 +41,10 @@ namespace Enigma
         {
             SaveFileDialog s = new SaveFileDialog();
             s.FileName = "Koraci sifrovanja.txt";
-            s.ShowDialog();
-            StreamWriter sw = new StreamWriter(s.FileName);
-            sw.WriteLine("Unos -> Plugboard -> Rotor I -> Rotor II -> Rotor III -> Reflektor -> Rotor III -> Rotor II -> Rotor I -> Plugboard -> Svetlo");
-            sw.Close();
+            if (s.ShowDialog() == true)
+            {
+                File.WriteAllText(s.FileName, Main.sr.ToString());
+            }
         }
         private void TastaturaKlik(object sender, RoutedEventArgs e)
         {
