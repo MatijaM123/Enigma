@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Enigma"
         mc:Ignorable="d"
-        Title="Enigma" Height="900" Width="735" ResizeMode="NoResize" LocationChanged="Window_LocationChanged" Closing="Window_Closing">
+        Title="Enigma" Height="900" Width="735" ResizeMode="NoResize" LocationChanged="Window_LocationChanged" Closing="Window_Closing" Focusable="True" >
     <StackPanel Opacity="1">
         <StackPanel.Background>
             <ImageBrush ImageSource="/1.jpg"/>
