@@ -1,11 +1,11 @@
-﻿<Window x:Class="Enigma.MainWindow"
+﻿<Window x:Name="Forma" x:Class="Enigma.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Enigma"
         mc:Ignorable="d"
-        Title="Enigma" Height="900" Width="735" ResizeMode="NoResize" LocationChanged="Window_LocationChanged" Closing="Window_Closing">
+        Title="Enigma" Height="900" Width="735" ResizeMode="NoResize" LocationChanged="Window_LocationChanged" Closing="Window_Closing" Focusable="True" >
     <StackPanel Opacity="1">
         <StackPanel.Background>
             <ImageBrush ImageSource="/1.jpg"/>
@@ -516,38 +516,38 @@
         </DockPanel>
         <Rectangle Height="30"></Rectangle>
         <DockPanel HorizontalAlignment="Center">
-            <Button x:Name="Qt" Content="Q" Width="40" Height="40" Margin="0,0,10,0" FontSize="24" Background="White" BorderBrush="Black" Opacity="0.85"/>
-            <Button x:Name="Wt" Content="W" Width="40" Height="40" Margin="0,0,10,0" FontSize="24" Background="White" BorderBrush="Black" Opacity="0.85"/>
-            <Button x:Name="Et" Content="E" Width="40" Height="40" Margin="0,0,10,0" FontSize="24" Background="White" BorderBrush="Black" Opacity="0.85"/>
-            <Button x:Name="Rt" Content="R" Width="40" Height="40" Margin="0,0,10,0" FontSize="24" Background="White" BorderBrush="Black" Opacity="0.85"/>
-            <Button x:Name="Tt" Content="T" Width="40" Height="40" Margin="0,0,10,0" FontSize="24" Background="White" BorderBrush="Black" Opacity="0.85"/>
-            <Button x:Name="Zt" Content="Z" Width="40" Height="40" Margin="0,0,10,0" FontSize="24" Background="White" BorderBrush="Black" Opacity="0.85"/>
-            <Button x:Name="Ut" Content="U" Width="40" Height="40" Margin="0,0,10,0" FontSize="24" Background="White" BorderBrush="Black" Opacity="0.85"/>
-            <Button x:Name="It" Content="I" Width="40" Height="40" Margin="0,0,10,0" FontSize="24" Background="White" BorderBrush="Black" Opacity="0.85"/>
-            <Button x:Name="Ot" Content="O" Width="40" Height="40" FontSize="24" Background="White" BorderBrush="Black" Opacity="0.85"/>
+            <Button x:Name="Qt" Click="TastaturaKlik" Content="Q" Width="40" Height="40" Margin="0,0,10,0" FontSize="24" Background="White" BorderBrush="Black" Opacity="0.85"/>
+            <Button x:Name="Wt" Click="TastaturaKlik" Content="W" Width="40" Height="40" Margin="0,0,10,0" FontSize="24" Background="White" BorderBrush="Black" Opacity="0.85"/>
+            <Button x:Name="Et" Click="TastaturaKlik" Content="E" Width="40" Height="40" Margin="0,0,10,0" FontSize="24" Background="White" BorderBrush="Black" Opacity="0.85"/>
+            <Button x:Name="Rt" Click="TastaturaKlik" Content="R" Width="40" Height="40" Margin="0,0,10,0" FontSize="24" Background="White" BorderBrush="Black" Opacity="0.85"/>
+            <Button x:Name="Tt" Click="TastaturaKlik" Content="T" Width="40" Height="40" Margin="0,0,10,0" FontSize="24" Background="White" BorderBrush="Black" Opacity="0.85"/>
+            <Button x:Name="Zt" Click="TastaturaKlik" Content="Z" Width="40" Height="40" Margin="0,0,10,0" FontSize="24" Background="White" BorderBrush="Black" Opacity="0.85"/>
+            <Button x:Name="Ut" Click="TastaturaKlik" Content="U" Width="40" Height="40" Margin="0,0,10,0" FontSize="24" Background="White" BorderBrush="Black" Opacity="0.85"/>
+            <Button x:Name="It" Click="TastaturaKlik" Content="I" Width="40" Height="40" Margin="0,0,10,0" FontSize="24" Background="White" BorderBrush="Black" Opacity="0.85"/>
+            <Button x:Name="Ot" Click="TastaturaKlik" Content="O" Width="40" Height="40" FontSize="24" Background="White" BorderBrush="Black" Opacity="0.85"/>
         </DockPanel>
         <Rectangle Height="10"></Rectangle>
         <DockPanel HorizontalAlignment="Center">
-            <Button x:Name="At" Content="A" Width="40" Height="40" Margin="0,0,10,0" FontSize="24" Background="White" BorderBrush="Black" Opacity="0.85"/>
-            <Button x:Name="St" Content="S" Width="40" Height="40" Margin="0,0,10,0" FontSize="24" Background="White" BorderBrush="Black" Opacity="0.85"/>
-            <Button x:Name="Dt" Content="D" Width="40" Height="40" Margin="0,0,10,0" FontSize="24" Background="White" BorderBrush="Black" Opacity="0.85"/>
-            <Button x:Name="Ft" Content="F" Width="40" Height="40" Margin="0,0,10,0" FontSize="24" Background="White" BorderBrush="Black" Opacity="0.85"/>
-            <Button x:Name="Gt" Content="G" Width="40" Height="40" Margin="0,0,10,0" FontSize="24" Background="White" BorderBrush="Black" Opacity="0.85"/>
-            <Button x:Name="Ht" Content="H" Width="40" Height="40" Margin="0,0,10,0" FontSize="24" Background="White" BorderBrush="Black" Opacity="0.85"/>
-            <Button x:Name="Jt" Content="J" Width="40" Height="40" Margin="0,0,10,0" FontSize="24" Background="White" BorderBrush="Black" Opacity="0.85"/>
-            <Button x:Name="Kt" Content="K" Width="40" Height="40" FontSize="24" Background="White" BorderBrush="Black" Opacity="0.85"/>
+            <Button x:Name="At" Click="TastaturaKlik" Content="A" Width="40" Height="40" Margin="0,0,10,0" FontSize="24" Background="White" BorderBrush="Black" Opacity="0.85"/>
+            <Button x:Name="St" Click="TastaturaKlik" Content="S" Width="40" Height="40" Margin="0,0,10,0" FontSize="24" Background="White" BorderBrush="Black" Opacity="0.85"/>
+            <Button x:Name="Dt" Click="TastaturaKlik" Content="D" Width="40" Height="40" Margin="0,0,10,0" FontSize="24" Background="White" BorderBrush="Black" Opacity="0.85"/>
+            <Button x:Name="Ft" Click="TastaturaKlik" Content="F" Width="40" Height="40" Margin="0,0,10,0" FontSize="24" Background="White" BorderBrush="Black" Opacity="0.85"/>
+            <Button x:Name="Gt" Click="TastaturaKlik" Content="G" Width="40" Height="40" Margin="0,0,10,0" FontSize="24" Background="White" BorderBrush="Black" Opacity="0.85"/>
+            <Button x:Name="Ht" Click="TastaturaKlik" Content="H" Width="40" Height="40" Margin="0,0,10,0" FontSize="24" Background="White" BorderBrush="Black" Opacity="0.85"/>
+            <Button x:Name="Jt" Click="TastaturaKlik" Content="J" Width="40" Height="40" Margin="0,0,10,0" FontSize="24" Background="White" BorderBrush="Black" Opacity="0.85"/>
+            <Button x:Name="Kt" Click="TastaturaKlik" Content="K" Width="40" Height="40" FontSize="24" Background="White" BorderBrush="Black" Opacity="0.85"/>
         </DockPanel>
         <Rectangle Height="10"></Rectangle>
         <DockPanel HorizontalAlignment="Center">
-            <Button x:Name="Pt" Content="P" Width="40" Height="40" Margin="0,0,10,0" FontSize="24" Background="White" BorderBrush="Black" Opacity="0.85"/>
-            <Button x:Name="Yt" Content="Y" Width="40" Height="40" Margin="0,0,10,0" FontSize="24" Background="White" BorderBrush="Black" Opacity="0.85"/>
-            <Button x:Name="Xt" Content="X" Width="40" Height="40" Margin="0,0,10,0" FontSize="24" Background="White" BorderBrush="Black" Opacity="0.85"/>
-            <Button x:Name="Ct" Content="C" Width="40" Height="40" Margin="0,0,10,0" FontSize="24" Background="White" BorderBrush="Black" Opacity="0.85"/>
-            <Button x:Name="Vt" Content="V" Width="40" Height="40" Margin="0,0,10,0" FontSize="24" Background="White" BorderBrush="Black" Opacity="0.85"/>
-            <Button x:Name="Bt" Content="B" Width="40" Height="40" Margin="0,0,10,0" FontSize="24" Background="White" BorderBrush="Black" Opacity="0.85"/>
-            <Button x:Name="Nt" Content="N" Width="40" Height="40" Margin="0,0,10,0" FontSize="24" Background="White" BorderBrush="Black" Opacity="0.85"/>
-            <Button x:Name="Mt" Content="M" Width="40" Height="40" Margin="0,0,10,0" FontSize="24" Background="White" BorderBrush="Black" Opacity="0.85"/>
-            <Button x:Name="Lt" Content="L" Width="40" Height="40" FontSize="24"/>
+            <Button x:Name="Pt" Click="TastaturaKlik" Content="P" Width="40" Height="40" Margin="0,0,10,0" FontSize="24" Background="White" BorderBrush="Black" Opacity="0.85"/>
+            <Button x:Name="Yt" Click="TastaturaKlik" Content="Y" Width="40" Height="40" Margin="0,0,10,0" FontSize="24" Background="White" BorderBrush="Black" Opacity="0.85"/>
+            <Button x:Name="Xt" Click="TastaturaKlik" Content="X" Width="40" Height="40" Margin="0,0,10,0" FontSize="24" Background="White" BorderBrush="Black" Opacity="0.85"/>
+            <Button x:Name="Ct" Click="TastaturaKlik" Content="C" Width="40" Height="40" Margin="0,0,10,0" FontSize="24" Background="White" BorderBrush="Black" Opacity="0.85"/>
+            <Button x:Name="Vt" Click="TastaturaKlik" Content="V" Width="40" Height="40" Margin="0,0,10,0" FontSize="24" Background="White" BorderBrush="Black" Opacity="0.85"/>
+            <Button x:Name="Bt" Click="TastaturaKlik" Content="B" Width="40" Height="40" Margin="0,0,10,0" FontSize="24" Background="White" BorderBrush="Black" Opacity="0.85"/>
+            <Button x:Name="Nt" Click="TastaturaKlik" Content="N" Width="40" Height="40" Margin="0,0,10,0" FontSize="24" Background="White" BorderBrush="Black" Opacity="0.85"/>
+            <Button x:Name="Mt" Click="TastaturaKlik" Content="M" Width="40" Height="40" Margin="0,0,10,0" FontSize="24" Background="White" BorderBrush="Black" Opacity="0.85"/>
+            <Button x:Name="Lt" Click="TastaturaKlik" Content="L" Width="40" Height="40" FontSize="24"/>
         </DockPanel>
         <Rectangle Height="30"></Rectangle>
         <DockPanel HorizontalAlignment="Center">

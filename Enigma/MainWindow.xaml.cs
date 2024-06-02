@@ -45,12 +45,13 @@ namespace Enigma
         object pocetniIzgledSvetla;
         private void Load(object sender, RoutedEventArgs e)
         {
+            Forma.Focus();
             svetlo = NapraviRGB(255, 189, 89);
             NapraviBoje();
             NapraviSvetla();
             pocetniIzgledSvetla = (RadialGradientBrush)As.Fill;
 
-             rotori = new List<Rotor>();
+            rotori = new List<Rotor>();
             rotori.Add(new Rotor(1));
             pozicije.Add('A');
             rotori.Add(new Rotor(2));
@@ -222,7 +223,6 @@ namespace Enigma
             s.Background = boje[brojacBoja / 2];
             brojacBoja++;
             //plugboard.KlikSlovo(trenutnoSlovoPlug);
-            Oboj(trenutnoSlovoPlug);
         }
         private void KoraciSifrovanja(object sender, RoutedEventArgs e)
         {
@@ -238,6 +238,14 @@ namespace Enigma
             Objasnjenje O = new Objasnjenje();
             O.ShowDialog();
             this.Visibility = Visibility.Visible;
+        }
+        private void TastaturaKlik(object sender, RoutedEventArgs e)
+        {
+            Button t = (Button)sender;
+            char x = enigma.Sifruj(t.Content.ToString()[0]);
+            Oboj(x);
+            nesifrovaniTekst.Text += t.Content.ToString()[0];
+            sifrovaniTekst.Text += x;
         }
     }
 }
