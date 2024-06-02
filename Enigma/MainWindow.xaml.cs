@@ -31,6 +31,7 @@ namespace Enigma
             InitializeComponent();
         }
         Podesavanja podesavanja;
+        EnigmaIspodHaube animacija;
         Color svetlo = new Color();
         int brojacBoja = 0;
         char trenutnoSlovoPlug = ' ';
@@ -121,9 +122,9 @@ namespace Enigma
                 podesavanja.cbx_zarez1.SelectedIndex = 0;
                 podesavanja.cbx_zarez2.SelectedIndex = 0;
                 podesavanja.cbx_zarez3.SelectedIndex = 0;
-                podesavanja.cbx_pozicija1.SelectedIndex = Convert.ToInt32(char.Parse(R1S.Content.ToString()))-65;
-                podesavanja.cbx_pozicija2.SelectedIndex = Convert.ToInt32(char.Parse(R2S.Content.ToString()))-65; ;
-                podesavanja.cbx_pozicija3.SelectedIndex = Convert.ToInt32(char.Parse(R3S.Content.ToString()))-65; ;
+                podesavanja.cbx_pozicija1.SelectedIndex = Convert.ToInt32(char.Parse(R1S.Content.ToString())) - 65;
+                podesavanja.cbx_pozicija2.SelectedIndex = Convert.ToInt32(char.Parse(R2S.Content.ToString())) - 65;
+                podesavanja.cbx_pozicija3.SelectedIndex = Convert.ToInt32(char.Parse(R3S.Content.ToString())) - 65;
                 podesavanja.Main = this;
                 podesavanja.Show();
                 podesavanja.Left = Left;
@@ -210,30 +211,12 @@ namespace Enigma
             plugboard.KlikSlovo(trenutnoSlovoPlug);
             Oboj(trenutnoSlovoPlug);
         }
-
-        private void R3G_Click(object sender, RoutedEventArgs e) //TreciRotor, Gore
-        {
-            string originalGore = R3G.Content.ToString();
-            R3G.Content = R3S.Content;
-            R3S.Content = R3D.Content;
-            if (originalGore != "C")
-            {
-                R3D.Content = (char)(Convert.ToChar(R3D.Content) - 1);
-            }
-            else
-            {
-                R3D.Content = "Z";
-            }
-        }
-
         private void KoraciSifrovanja(object sender, RoutedEventArgs e)
         {
-            SaveFileDialog s = new SaveFileDialog();
-            s.FileName = "Koraci sifrovanja.txt";
-            s.ShowDialog();
-            StreamWriter sw = new StreamWriter(s.FileName);
-            sw.WriteLine("Unos -> Plugboard -> Rotor I -> Rotor II -> Rotor III -> Reflektor -> Rotor III -> Rotor II -> Rotor I -> Plugboard -> Svetlo");
-            sw.Close();
+            animacija = new EnigmaIspodHaube();
+            this.Visibility = Visibility.Hidden;
+            animacija.ShowDialog();
+            this.Visibility = Visibility.Visible;
         }
     }
 }

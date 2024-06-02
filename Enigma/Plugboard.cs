@@ -9,7 +9,7 @@ using System.Windows.Media;
 
 namespace Enigma
 {
-    internal class Plugboard : ISifrovanje
+    internal class Plugboard : ElementEnigme,ISifrovanje
     {
         public (char slovo,int idBoje)[] Izlazna { get; private set; } // sadrzi slovo i index boje
         (Color boja, bool zauzeta)[] bojeSlova;
@@ -96,6 +96,25 @@ namespace Enigma
         public char Sifruj(char x, bool smer = false) // vraca slovo koje je spojeno sa unetim slovom
         {
             return Izlazna[x - 'A'].slovo;
+        }
+
+        protected override void NacrtajElement(Canvas C)
+        {
+            char[] slova = ParsirajIzlazniNiz(Izlazna);
+            NacrtajKvadratice(C);
+            NacrtajLinijeIzmedjuKvadratica(C, slova);
+        }
+        public void NacrtajPlugboard(Canvas C)
+        {
+            NacrtajElement(C);
+        }
+        private char[] ParsirajIzlazniNiz(char[] izlazna)
+        {
+            char[] x = new char[izlazna.Length];
+            for (int i = 0; i < x.Length; i++)
+                if (izlazna[i] == '.') x[i] = (char)('A' + i);
+                else x[i] = Izlazna[i];
+            return x;
         }
     }
 }
