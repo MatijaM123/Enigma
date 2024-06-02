@@ -221,7 +221,7 @@ namespace Enigma
             trenutnoSlovoPlug = pom[pom.Length - 1];
             s.Background = boje[brojacBoja / 2];
             brojacBoja++;
-            plugboard.KlikSlovo(trenutnoSlovoPlug);
+            //plugboard.KlikSlovo(trenutnoSlovoPlug);
             Oboj(trenutnoSlovoPlug);
         }
         private void KoraciSifrovanja(object sender, RoutedEventArgs e)

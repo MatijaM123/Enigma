@@ -95,7 +95,7 @@ namespace Enigma
         }
         public char Sifruj(char x, bool smer = false) // vraca slovo koje je spojeno sa unetim slovom
         {
-            return Izlazna[x - 'A'].slovo;
+            return Izlazna[x - 'A'].slovo=='.'?(char)(x+'A'): Izlazna[x - 'A'].slovo;
         }
 
         protected override void NacrtajElement(Canvas C)
@@ -108,12 +108,12 @@ namespace Enigma
         {
             NacrtajElement(C);
         }
-        private char[] ParsirajIzlazniNiz(char[] izlazna)
+        private char[] ParsirajIzlazniNiz((char,int)[] izlazna)
         {
             char[] x = new char[izlazna.Length];
             for (int i = 0; i < x.Length; i++)
-                if (izlazna[i] == '.') x[i] = (char)('A' + i);
-                else x[i] = Izlazna[i];
+                if (izlazna[i].Item1 == '.') x[i] = (char)('A' + i);
+                else x[i] = Izlazna[i].Item1;
             return x;
         }
     }
