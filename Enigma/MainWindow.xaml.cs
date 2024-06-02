@@ -137,6 +137,7 @@ namespace Enigma
                 podesavanja.cbx_pozicija2.SelectedIndex = Convert.ToInt32(char.Parse(R2S.Content.ToString())) - 65;
                 podesavanja.cbx_pozicija3.SelectedIndex = Convert.ToInt32(char.Parse(R3S.Content.ToString())) - 65;
                 podesavanja.Main = this;
+                podesavanja.Owner = this;
                 podesavanja.Show();
                 podesavanja.Left = Left;
                 podesavanja.Top = Top + 50;
