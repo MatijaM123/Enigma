@@ -1,4 +1,4 @@
-﻿<Window x:Class="Enigma.Objasnjenje"
+﻿<Window x:Class="Enigma.Objasnjenje" ResizeMode="NoResize"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -33,7 +33,7 @@
               a i znači<LineBreak/>
               "zagonetka".
             </TextBlock>
-            <Button Grid.Row="2" Content="3D Model"></Button>
+            <Button Grid.Row="2" Content="3D Model" Click="Button_Click"></Button>
         </Grid>
         <Grid Grid.Column="1">
             <Grid.RowDefinitions>

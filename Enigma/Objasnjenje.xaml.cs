@@ -91,5 +91,10 @@ namespace Enigma
             Naziv.Text = "";
             Opis.Text = "";
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://sketchfab.com/3d-models/enigma-machine-1934-c8ee76c383654e3095ea4cc9e7990274");
+        }
     }
 }

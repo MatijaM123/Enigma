@@ -12,6 +12,7 @@ namespace Enigma
         List<Rotor> rotori = new List<Rotor>();
         Reflektor reflektor = new Reflektor(1);
         Plugboard plugboard = new Plugboard();
+        public Plugboard PB { get { return plugboard; } }
         public string TokSifrovanja = null;
         public List<char> Pozicije { get; set; }
         public char Sifruj(char x, bool smer = false)

@@ -53,9 +53,9 @@ namespace Enigma
             NapraviBoje();
             NapraviSvetla();
             pocetniIzgledSvetla = (RadialGradientBrush)As.Fill;
-            Rotor1 = 1;
+            Rotor1 = 3;
             Rotor2 = 2;
-            Rotor3 = 3;
+            Rotor3 = 1;
             rotori = new List<Rotor>();
             rotori.Add(new Rotor(1));
             pozicije.Add('A');
@@ -65,6 +65,19 @@ namespace Enigma
             pozicije.Add('A');
             reflektor = new Reflektor(0);
             enigma = new EnigmaMasina(rotori, reflektor, plugboard, pozicije);
+        }
+        public void Iscrtaj()
+        {
+            R1S.Content = pozicije[2];
+            R1G.Content = (char)((pozicije[2]+1-'A')%26 + 'A');
+            R1D.Content = (char)((pozicije[2] - 1 - 'A'+26) % 26 + 'A');
+            R2S.Content = pozicije[1];
+            R2G.Content = (char)((pozicije[1] + 1 - 'A') % 26 + 'A');
+            R2D.Content = (char)((pozicije[1] - 1 - 'A' + 26) % 26 + 'A');
+            R3S.Content = pozicije[0];
+            R3G.Content = (char)((pozicije[0] + 1 - 'A') % 26 + 'A');
+            R3D.Content = (char)((pozicije[0] - 1 - 'A' + 26) % 26 + 'A');
+
         }
         private void NapraviSvetla()
         {
@@ -150,58 +163,37 @@ namespace Enigma
                 podesavanja.Show();
                 podesavanja.Left = Left;
                 podesavanja.Top = Top + 50;
+                Rotor R1 = new Rotor(Rotor1);
+                Rotor R2 = new Rotor(Rotor2);
+                Rotor R3 = new Rotor(Rotor3);
+                rotori = new List<Rotor> { R1, R2, R3 };
+                enigma = new EnigmaMasina(rotori, new Reflektor(SacuvajReflektor),enigma.PB, enigma.Pozicije);
+
             }
             else
             {
                 Button gornjeDugme = null;
                 Button donjeDugme = null;
-                Button srednjeDugme = null;
+                int t;
                 if (rotorID == 1)
                 {
                     gornjeDugme = R1G;
                     donjeDugme = R1D;
-                    srednjeDugme = R1S;
+                    enigma.Pozicije[2] = pravac == 'D' ? R1D.Content.ToString()[0] : R1G.Content.ToString()[0];
                 }
                 else if (rotorID == 2)
                 {
                     gornjeDugme = R2G;
                     donjeDugme = R2D;
-                    srednjeDugme = R2S;
+                    enigma.Pozicije[1] = pravac == 'D' ? R2D.Content.ToString()[0] : R2G.Content.ToString()[0];
                 }
                 else if (rotorID == 3)
                 {
                     gornjeDugme = R3G;
                     donjeDugme = R3D;
-                    srednjeDugme = R3S;
+                    enigma.Pozicije[0] = pravac == 'D' ? R3D.Content.ToString()[0] : R3G.Content.ToString()[0];
                 }
-                if (pravac == 'D')
-                {
-                    string originalDole = donjeDugme.Content.ToString();
-                    donjeDugme.Content = srednjeDugme.Content;
-                    srednjeDugme.Content = gornjeDugme.Content;
-                    if (originalDole != "X")
-                    {
-                        gornjeDugme.Content = (char)(Convert.ToChar(gornjeDugme.Content) + 1);
-                    }
-                    else
-                    {
-                        gornjeDugme.Content = "A";
-                    }
-                }
-                else if (pravac == 'G')
-                {
-                    string originalGore = gornjeDugme.Content.ToString();
-                    gornjeDugme.Content = srednjeDugme.Content;
-                    srednjeDugme.Content = donjeDugme.Content;
-                    if (originalGore != "C")
-                    {
-                        donjeDugme.Content = (char)(Convert.ToChar(donjeDugme.Content) - 1);
-                    }
-                    else
-                    {
-                        donjeDugme.Content = "Z";
-                    }
-                }
+                Iscrtaj();
             }
 
         }

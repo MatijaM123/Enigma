@@ -129,15 +129,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Q.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Q1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="pozadina.jpg">
+    <Content Include="pozadina.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="1.jpg">
@@ -145,26 +139,26 @@
     </Resource>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="enigma.png">
+    <Content Include="enigma.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
+    </Content>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Tastatura.jpg">
+    <Content Include="Tastatura.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Edu.jpg">
+    </Content>
+    <Content Include="Edu.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Enigma1.JPG">
+    </Content>
+    <Content Include="Enigma1.JPG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Lampboard.jpg">
+    </Content>
+    <Content Include="Lampboard.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Plugboard.jpg">
+    </Content>
+    <Content Include="Plugboard.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
+    </Content>
     <Content Include="pomoc.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

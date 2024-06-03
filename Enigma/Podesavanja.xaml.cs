@@ -32,9 +32,10 @@ namespace Enigma
 
         private void OK_Click(object sender, RoutedEventArgs e)
         {
-            Main.R1S.Content = cbx_pozicija1.Text;
-            Main.R2S.Content = cbx_pozicija2.Text;
-            Main.R3S.Content = cbx_pozicija3.Text;
+            Main.enigma.Pozicije[0] = cbx_pozicija3.Text[0];
+            Main.enigma.Pozicije[1] = cbx_pozicija2.Text[0];
+            Main.enigma.Pozicije[2] = cbx_pozicija1.Text[0];
+            Main.Iscrtaj();
             Main.R1G.Content = SledeceSlovo(cbx_pozicija1.Text);
             Main.R2G.Content = SledeceSlovo(cbx_pozicija2.Text);
             Main.R3G.Content = SledeceSlovo(cbx_pozicija3.Text);
