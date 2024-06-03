@@ -60,8 +60,14 @@
       <DependentUpon>EnigmaIspodHaube.xaml</DependentUpon>
     </Compile>
     <Compile Include="EnigmaMasina.cs" />
+    <Compile Include="Objasnjenje.xaml.cs">
+      <DependentUpon>Objasnjenje.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Podesavanja.xaml.cs">
       <DependentUpon>Podesavanja.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pravougaonik.xaml.cs">
+      <DependentUpon>Pravougaonik.xaml</DependentUpon>
     </Compile>
     <Compile Include="Rotor.cs" />
     <Compile Include="Reflektor.cs" />
@@ -83,7 +89,15 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Objasnjenje.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Podesavanja.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pravougaonik.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -121,10 +135,39 @@
     <Resource Include="Q1.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="pozadina.jpg" />
+    <Resource Include="pozadina.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="1.jpg" />
+    <Resource Include="1.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="enigma.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Tastatura.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Edu.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Enigma1.JPG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Lampboard.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Plugboard.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Content Include="pomoc.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

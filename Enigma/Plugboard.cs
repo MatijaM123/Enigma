@@ -138,20 +138,11 @@ namespace Enigma
             char slovo = pom[pom.Length - 1];
             Izlazna[slovo-'A'].Dugme = dugme;
             KlikSlovo(slovo);
-            /*
-            int idBoje = Izlazna[slovo - 'A'].IdBoje;
-            if (idBoje == -1) // ne treba da bude obojen
-                dugme.Background = new SolidColorBrush(Color.FromArgb(255, 255, 255, 255));
-            else
-                dugme.Background = new SolidColorBrush(bojeSlova[idBoje].boja);
-            */
-            //Button parDugme = Izlazna[];
         }
         public char Sifruj(char x, bool smer = false) // vraca slovo koje je spojeno sa unetim slovom
         {
             return Izlazna[x - 'A'].Slovo=='.'?(char)(x+'A'): Izlazna[x - 'A'].Slovo;
         }
-
         protected override void NacrtajElement(Canvas C)
         {
             char[] slova = ParsirajIzlazniNiz(Izlazna);
