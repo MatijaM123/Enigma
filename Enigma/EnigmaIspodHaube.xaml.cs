@@ -23,6 +23,8 @@ namespace Enigma
     public partial class EnigmaIspodHaube : Window
     {
         List<Canvas> rotorskiCanvasi = new List<Canvas>();
+        List<Button> svetla;
+        Button prethodni = null;
         public EnigmaIspodHaube(MainWindow Main)
         {
             this.Main = Main;
@@ -34,6 +36,8 @@ namespace Enigma
             rotorskiCanvasi.Add(Rotor1Canvas);
             rotorskiCanvasi.Add(Rotor2Canvas);
             rotorskiCanvasi.Add(Rotor3Canvas);
+            Button[] t = { lA, lB, lC, lD, lE, lF, lG, lH, lI, lJ, lK, lL, lM, lN, lO, lP, lQ, lR, lS, lT, lU, lV, lW, lX, lY, lZ };
+            svetla = new List<Button>(t);
             Iscrtaj();
         }
         private MainWindow Main { get; set; }
@@ -50,11 +54,12 @@ namespace Enigma
         {
 
             Button t = (Button)sender;         
-            Main.enigma.Sifruj(t.Content.ToString()[0]);
+            char x = Main.enigma.Sifruj(t.Content.ToString()[0]);
             Iscrtaj();
-            //t.Background = Brushes.AliceBlue;
+            t.Background = Brushes.Aqua;
+            svetla[x - 'A'].Background = Brushes.Gold;
             NacrtajPutanju();
-            
+            prethodni = t;
         }
 
         private void NacrtajPutanju()
@@ -149,14 +154,14 @@ namespace Enigma
                 C.Children.Add(line);
             }
             C = PlugboardCanvas;
-            NacrtajKvadraticSaSlovom(C, C.Width - C.Height / 26, C.Height - (s[16] - 'A' + 1) * C.Height / 26, ((char)((s[16] - 'A' + 26) % 26 + 'A')).ToString(), Brushes.Gold);
-            NacrtajKvadraticSaSlovom(C, 0, C.Height - (s[17] - 'A' + 1) * C.Height / 26, ((char)((s[17] - 'A' + 26) % 26 + 'A')).ToString(), Brushes.Gold);
+            NacrtajKvadraticSaSlovom(C, C.Width - C.Height / 26, C.Height - (s[17] - 'A' + 1) * C.Height / 26, ((char)((s[17] - 'A' + 26) % 26 + 'A')).ToString(), Brushes.Gold);
+            NacrtajKvadraticSaSlovom(C, 0, C.Height - (s[16] - 'A' + 1) * C.Height / 26, ((char)((s[16] - 'A' + 26) % 26 + 'A')).ToString(), Brushes.Gold);
             line = new Line
             {
                 X1 = (C.Height / 26) + 2,
-                Y1 = C.Height - (s[17] - 'A' + 1) * C.Height / 26 + C.Height / 52,
+                Y1 = C.Height - (s[16] - 'A' + 1) * C.Height / 26 + C.Height / 52,
                 X2 = C.Width - 2 - C.Height / 26,
-                Y2 = C.Height - (s[16] - 'A' + 1) * C.Height / 26 + C.Height / 52,
+                Y2 = C.Height - (s[17] - 'A' + 1) * C.Height / 26 + C.Height / 52,
                 Stroke = Brushes.Gold,
                 StrokeThickness = 3
             };
@@ -212,6 +217,10 @@ namespace Enigma
             Rotor1TrSlovo.Text = Main.enigma.Pozicije[0].ToString();
             Rotor2TrSlovo.Text = Main.enigma.Pozicije[1].ToString();
             Rotor3TrSlovo.Text = Main.enigma.Pozicije[2].ToString();
+            if (prethodni != null)
+                prethodni.Background = Brushes.LightGray;
+            for (int i = 0; i < svetla.Count; i++)
+                svetla[i].Background = Brushes.LightGray;
         }
     }
 }

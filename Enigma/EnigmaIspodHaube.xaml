@@ -59,39 +59,39 @@
             <Viewbox Stretch="Uniform" Grid.Row="0" Width="360" VerticalAlignment="Top" Margin="0,100,10,0">
                 <DockPanel LastChildFill="True" VerticalAlignment="Center">
                     <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" HorizontalAlignment="Center" Margin="5">
-                        <Button Content="Q" Width="50" Height="50" Margin="2" IsEnabled="False"/>
-                        <Button Content="W" Width="50" Height="50" Margin="2" IsEnabled="False"/>
-                        <Button Content="E" Width="50" Height="50" Margin="2" IsEnabled="False"/>
-                        <Button Content="R" Width="50" Height="50" Margin="2" IsEnabled="False"/>
-                        <Button Content="T" Width="50" Height="50" Margin="2" IsEnabled="False"/>
-                        <Button Content="Y" Width="50" Height="50" Margin="2" IsEnabled="False"/>
-                        <Button Content="U" Width="50" Height="50" Margin="2" IsEnabled="False"/>
-                        <Button Content="I" Width="50" Height="50" Margin="2" IsEnabled="False"/>
-                        <Button Content="O" Width="50" Height="50" Margin="2" IsEnabled="False"/>
+                        <Button Content="Q" x:Name="lQ" Width="50" Height="50" Margin="2" IsEnabled="True"/>
+                        <Button Content="W" x:Name="lW" Width="50" Height="50" Margin="2" IsEnabled="True"/>
+                        <Button Content="E" x:Name="lE" Width="50" Height="50" Margin="2" IsEnabled="True"/>
+                        <Button Content="R" x:Name="lR" Width="50" Height="50" Margin="2" IsEnabled="True"/>
+                        <Button Content="T" x:Name="lT" Width="50" Height="50" Margin="2" IsEnabled="True"/>
+                        <Button Content="Y" x:Name="lY" Width="50" Height="50" Margin="2" IsEnabled="True"/>
+                        <Button Content="U" x:Name="lU" Width="50" Height="50" Margin="2" IsEnabled="True"/>
+                        <Button Content="I" x:Name="lI" Width="50" Height="50" Margin="2" IsEnabled="True"/>
+                        <Button Content="O" x:Name="lO" Width="50" Height="50" Margin="2" IsEnabled="True"/>
                     </StackPanel>
 
 
                     <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" HorizontalAlignment="Center" Margin="5">
-                        <Button Content="A" Width="50" Height="50" Margin="2" IsEnabled="False"/>
-                        <Button Content="S" Width="50" Height="50" Margin="2" IsEnabled="False"/>
-                        <Button Content="D" Width="50" Height="50" Margin="2" IsEnabled="False"/>
-                        <Button Content="F" Width="50" Height="50" Margin="2" IsEnabled="False"/>
-                        <Button Content="G" Width="50" Height="50" Margin="2" IsEnabled="False"/>
-                        <Button Content="H" Width="50" Height="50" Margin="2" IsEnabled="False"/>
-                        <Button Content="J" Width="50" Height="50" Margin="2" IsEnabled="False"/>
-                        <Button Content="K" Width="50" Height="50" Margin="2" IsEnabled="False"/>
+                        <Button Content="A" x:Name="lA" Width="50" Height="50" Margin="2" IsEnabled="True"/>
+                        <Button Content="S" x:Name="lS" Width="50" Height="50" Margin="2" IsEnabled="True"/>
+                        <Button Content="D" x:Name="lD" Width="50" Height="50" Margin="2" IsEnabled="True"/>
+                        <Button Content="F" x:Name="lF" Width="50" Height="50" Margin="2" IsEnabled="True"/>
+                        <Button Content="G" x:Name="lG" Width="50" Height="50" Margin="2" IsEnabled="True"/>
+                        <Button Content="H" x:Name="lH" Width="50" Height="50" Margin="2" IsEnabled="True"/>
+                        <Button Content="J" x:Name="lJ" Width="50" Height="50" Margin="2" IsEnabled="True"/>
+                        <Button Content="P" x:Name="lP" Width="50" Height="50" Margin="2" IsEnabled="True"/>
                     </StackPanel>
 
                     <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" HorizontalAlignment="Center" Margin="5">
-                        <Button Content="Z" Width="50" Height="50" Margin="2" IsEnabled="False"/>
-                        <Button Content="X" Width="50" Height="50" Margin="2" IsEnabled="False"/>
-                        <Button Content="C" Width="50" Height="50" Margin="2" IsEnabled="False"/>
-                        <Button Content="V" Width="50" Height="50" Margin="2" IsEnabled="False"/>
-                        <Button Content="B" Width="50" Height="50" Margin="2" IsEnabled="False"/>
-                        <Button Content="N" Width="50" Height="50" Margin="2" IsEnabled="False"/>
-                        <Button Content="M" Width="50" Height="50" Margin="2" IsEnabled="False"/>
-                        <Button Content="K" Width="50" Height="50" Margin="2" IsEnabled="False"/>
-                        <Button Content="L" Width="50" Height="50" Margin="2" IsEnabled="False"/>
+                        <Button Content="Z" x:Name="lZ" Width="50" Height="50" Margin="2" IsEnabled="True"/>
+                        <Button Content="X" x:Name="lX" Width="50" Height="50" Margin="2" IsEnabled="True"/>
+                        <Button Content="C" x:Name="lC" Width="50" Height="50" Margin="2" IsEnabled="True"/>
+                        <Button Content="V" x:Name="lV" Width="50" Height="50" Margin="2" IsEnabled="True"/>
+                        <Button Content="B" x:Name="lB" Width="50" Height="50" Margin="2" IsEnabled="True"/>
+                        <Button Content="N" x:Name="lN" Width="50" Height="50" Margin="2" IsEnabled="True"/>
+                        <Button Content="M" x:Name="lM" Width="50" Height="50" Margin="2" IsEnabled="True"/>
+                        <Button Content="K" x:Name="lK" Width="50" Height="50" Margin="2" IsEnabled="True"/>
+                        <Button Content="L" x:Name="lL" Width="50" Height="50" Margin="2" IsEnabled="True"/>
                     </StackPanel>
                 </DockPanel>
             </Viewbox>
@@ -118,7 +118,7 @@
                         <Button Content="G" Width="50" Height="50" Margin="2" Click ="TastaturaKlik"/>
                         <Button Content="H" Width="50" Height="50" Margin="2" Click ="TastaturaKlik"/>
                         <Button Content="J" Width="50" Height="50" Margin="2" Click ="TastaturaKlik"/>
-                        <Button Content="K" Width="50" Height="50" Margin="2" Click ="TastaturaKlik"/>
+                        <Button Content="P" Width="50" Height="50" Margin="2" Click ="TastaturaKlik"/>
                     </StackPanel>
 
                     <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" HorizontalAlignment="Center" Margin="5">

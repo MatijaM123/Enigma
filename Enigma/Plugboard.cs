@@ -141,7 +141,7 @@ namespace Enigma
         }
         public char Sifruj(char x, bool smer = false) // vraca slovo koje je spojeno sa unetim slovom
         {
-            return Izlazna[x - 'A'].Slovo=='.'?(char)(x+'A'): Izlazna[x - 'A'].Slovo;
+            return Izlazna[x - 'A'].Slovo=='.'?x: Izlazna[x - 'A'].Slovo;
         }
         protected override void NacrtajElement(Canvas C)
         {

@@ -225,7 +225,6 @@ namespace Enigma
         private void Spoji(object sender, RoutedEventArgs e)
         {
             plugboard.BtnKlikSlovo(sender);
-            Oboj(trenutnoSlovoPlug);
         }
         private void KoraciSifrovanja(object sender, RoutedEventArgs e)
         {
