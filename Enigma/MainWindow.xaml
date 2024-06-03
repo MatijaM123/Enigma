@@ -55,7 +55,7 @@
 
             <Rectangle Width="118"></Rectangle>
             <Button x:Name="R1S" Content="A" HorizontalAlignment="Left" Height="45" VerticalAlignment="Top" Width="20"  Background="White" Click="PomeriRotor"/>
-            
+
             <Rectangle Width="15"></Rectangle>
             <Button x:Name="R2S" Content="A" HorizontalAlignment="Left" Height="45" VerticalAlignment="Top" Width="20"  Background="White" Click="PomeriRotor"/>
 
@@ -585,6 +585,7 @@
             <Button x:Name="Lp" Content="L" Width="30" Height="30" FontSize="18" Background="White" BorderBrush="Black" Click="Spoji"/>
         </DockPanel>
         <Rectangle Height="30"></Rectangle>
+        <Button x:Name="ResetText" Content="RESET TEXT" Height="20" Width="88" Click="ResetText_Click"/>
         <DockPanel HorizontalAlignment="Center">
             <TextBlock x:Name="nesifrovaniTekst" Height="200" TextWrapping="Wrap" Text=" " Width="200" Background="White"/>
             <Rectangle Width="10"/>

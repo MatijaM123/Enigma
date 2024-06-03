@@ -33,6 +33,8 @@ namespace Enigma
         internal EnigmaMasina enigma;
         public int Rotor1, Rotor2, Rotor3;
         public int SacuvajReflektor;
+        public TextBlock Ulaz { get => nesifrovaniTekst; }
+        public TextBlock Izlaz { get => sifrovaniTekst; }
         List<char> pozicije = new List<char>();
         List<Rotor> rotori;
         Reflektor reflektor;
@@ -237,6 +239,13 @@ namespace Enigma
         private void Uputstvo_Click(object sender, RoutedEventArgs e)
         {
             System.Diagnostics.Process.Start("pomoc.html");
+        }
+
+        private void ResetText_Click(object sender, RoutedEventArgs e)
+        {
+            sr.Clear();
+            Ulaz.Text = "";
+            Izlaz.Text = "";
         }
 
         private void TastaturaKlik(object sender, RoutedEventArgs e)

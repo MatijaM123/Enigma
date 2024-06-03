@@ -39,6 +39,8 @@ namespace Enigma
             Button[] t = { lA, lB, lC, lD, lE, lF, lG, lH, lI, lJ, lK, lL, lM, lN, lO, lP, lQ, lR, lS, lT, lU, lV, lW, lX, lY, lZ };
             svetla = new List<Button>(t);
             Iscrtaj();
+            TBUlaz.Text = Main.Ulaz.Text;
+            TBIzlaz.Text = Main.Izlaz.Text;
         }
         private MainWindow Main { get; set; }
         private void SacuvajFajl(object sender, RoutedEventArgs e)
@@ -60,8 +62,18 @@ namespace Enigma
             svetla[x - 'A'].Background = Brushes.Gold;
             NacrtajPutanju();
             prethodni = t;
+            TBUlaz.Text+= t.Content.ToString()[0];
+            TBIzlaz.Text += x;
+            Main.Ulaz.Text += t.Content.ToString()[0];
+            Main.Izlaz.Text += x;
+            Main.sr.Append("\nUnos -> Plugboard -> Rotor I -> Rotor II -> Rotor III -> Reflektor -> Rotor III -> Rotor II -> Rotor I -> Plugboard -> Svetlo\n");
+            for (int i = 0; i < Main.enigma.TokSifrovanja.Length - 1; i += 2)
+            {
+                Main.sr.Append(Main.enigma.TokSifrovanja[i]);
+                Main.sr.Append(" -> ");
+            }
+            Main.sr.Append(Main.enigma.TokSifrovanja[Main.enigma.TokSifrovanja.Length - 1]);
         }
-
         private void NacrtajPutanju()
         {
             string s = Main.enigma.TokSifrovanja;
