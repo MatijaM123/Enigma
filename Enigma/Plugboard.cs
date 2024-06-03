@@ -10,26 +10,37 @@ using System.Windows.Media;
 
 namespace Enigma
 {
+    struct PlugSlovo
+    {
+        public char Slovo;
+        public int IdBoje;
+        public Button Dugme;
+        public PlugSlovo(char slovo, int idBoje, Button dugme = null)
+        {
+            Slovo = slovo; IdBoje = idBoje; Dugme = dugme;
+        }
+    }
+
     internal class Plugboard : ElementEnigme,ISifrovanje
     {
-        public (char slovo,int idBoje)[] Izlazna { get; private set; } // sadrzi slovo i index boje
+        public PlugSlovo[] Izlazna { get; private set; } // sadrzi slovo i index boje
         (Color boja, bool zauzeta)[] bojeSlova;
-        char kliknuto; // slovo koje je kliknuto
+        char prethodni;
         public Plugboard()
         {
-            Izlazna = new (char, int)[]
+            Izlazna = new PlugSlovo[]
             {
-                 ('.', -1), ('.', -1), ('.', -1),
-                 ('.', -1), ('.', -1), ('.', -1),
-                 ('.', -1), ('.', -1), ('.', -1),
-                 ('.', -1), ('.', -1), ('.', -1),
-                 ('.', -1), ('.', -1), ('.', -1),
-                 ('.', -1), ('.', -1), ('.', -1),
-                 ('.', -1), ('.', -1), ('.', -1),
-                 ('.', -1), ('.', -1), ('.', -1),
-                 ('.', -1), ('.', -1)
+                 new PlugSlovo('.', -1,new Button()), new PlugSlovo('.', -1,new Button()), new PlugSlovo('.', -1,new Button()),
+                 new PlugSlovo('.', -1,new Button()), new PlugSlovo('.', -1,new Button()), new PlugSlovo('.', -1,new Button()),
+                 new PlugSlovo('.', -1,new Button()), new PlugSlovo('.', -1,new Button()), new PlugSlovo('.', -1,new Button()),
+                 new PlugSlovo('.', -1,new Button()), new PlugSlovo('.', -1,new Button()), new PlugSlovo('.', -1,new Button()),
+                 new PlugSlovo('.', -1,new Button()), new PlugSlovo('.', -1,new Button()), new PlugSlovo('.', -1,new Button()),
+                 new PlugSlovo('.', -1,new Button()), new PlugSlovo('.', -1,new Button()), new PlugSlovo('.', -1,new Button()),
+                 new PlugSlovo('.', -1,new Button()), new PlugSlovo('.', -1,new Button()), new PlugSlovo('.', -1,new Button()),
+                 new PlugSlovo('.', -1,new Button()), new PlugSlovo('.', -1,new Button()), new PlugSlovo('.', -1,new Button()),
+                 new PlugSlovo('.', -1,new Button()), new PlugSlovo('.', -1,new Button())
             };
-            kliknuto = '-';
+            prethodni = '-';
             bojeSlova = new (Color,bool)[] // 26 slova, 13 boja
             {
                 (Color.FromArgb(255, 255, 0, 0), false),      // Crvena
@@ -51,52 +62,94 @@ namespace Enigma
         {
             for (int i = 0; i < bojeSlova.Length; i++)
                 if (!bojeSlova[i].zauzeta)
+                {
                     return i;
+                }
             return -1; // nemoguc slucaj
         }
+        int trBoja;
+        bool spec = false;//specijalan slucaj gde se spojeni par razdvaja nakon sto je pritisnut samo 1 slovo
         private void KlikSlovo(char s) // updateuje Izlazni niz slova
         {
-            int i1 = s - 'A';
-            int trBoja = IzaberiBoju();
-            Izlazna[i1].idBoje = trBoja;
-            if (Izlazna[i1].slovo != '.') //provera da li je vec povezano, brisanje
+            int i1 = s - 'A'; 
+            if (Izlazna[i1].Slovo != '.') //provera da li je vec povezano, brisanje
             {
-                int i2 = Izlazna[i1].slovo - 'A';// index drugog slova u paru
-                Izlazna[i2].slovo = '.'; Izlazna[i2].idBoje = -1;
-                Izlazna[i1].slovo = '.'; Izlazna[i1].idBoje = -1;
-                bojeSlova[trBoja].zauzeta = false;
+                
+                int i2 = Izlazna[i1].Slovo - 'A';
+                char p = prethodni; // pomocna
+                if (prethodni>45 && !bojeSlova[Izlazna[prethodni - 'A'].IdBoje].zauzeta)
+                { trBoja = Izlazna[prethodni - 'A'].IdBoje; spec = true; }
+                RazdvojiSlova(i1,i2);
+                if (spec) prethodni = p;
                 return;
             }
-            if (kliknuto == '-') //provera da li je prvo ili drugo slovo u paru
-                kliknuto = s;
-            else if (kliknuto == s) // kliknuto slovo je vec u upotrebi, brisanje
-            { kliknuto = '-'; Izlazna[i1].slovo = '.'; Izlazna[i1].idBoje = -1; }
-            else // 
-                SpojiSlova(s, kliknuto, trBoja);
+            if (!spec)
+            { trBoja = IzaberiBoju(); }
+            spec = false;
+            Izlazna[i1].IdBoje = trBoja;
+            if (prethodni == '-') //provera da li je prvo ili drugo slovo u paru
+            {
+                prethodni = s; ObojiDugme(Izlazna[i1]);
+            }
+            else if (prethodni == s) // prethodni slovo je vec u upotrebi, brisanje
+            {  
+                Izlazna[i1].Slovo = '.'; Izlazna[i1].IdBoje = -1; prethodni = '-'; ObojiDugme(Izlazna[i1]);
+            }
+            else 
+            {
+                int i2 = prethodni - 'A';
+                SpojiSlova(s,prethodni);
+            }
+
         }
-        private void SpojiSlova(char s1, char s2,int trBoja)
+        private void ObojiDugme(PlugSlovo x)
+        {
+            if (x.IdBoje == -1) // nema boje
+                x.Dugme.Background = new SolidColorBrush(Color.FromArgb(255, 255, 255, 255));
+            else
+                x.Dugme.Background = new SolidColorBrush(bojeSlova[x.IdBoje].boja);
+        }
+        private void RazdvojiSlova(int i1, int i2)
+        {
+            Izlazna[i2].Slovo = '.';
+            Izlazna[i1].Slovo = '.';
+            prethodni = '-';
+            bojeSlova[Izlazna[i1].IdBoje].zauzeta = false;
+            Izlazna[i1].IdBoje = -1;
+            Izlazna[i2].IdBoje = -1;
+            ObojiDugme(Izlazna[i1]); 
+            ObojiDugme(Izlazna[i2]);
+        }
+        private void SpojiSlova(char s1, char s2)
         {
             int i1 = s1 - 'A';
             int i2 = s2 - 'A';
-            Izlazna[i1].slovo = s2; 
-            Izlazna[i2].slovo = s1; 
+            Izlazna[i1].Slovo = s2; 
+            Izlazna[i2].Slovo = s1;
+            prethodni = '-';
             bojeSlova[trBoja].zauzeta = true;
-            kliknuto = '-';
+            ObojiDugme(Izlazna[i1]); 
+            ObojiDugme(Izlazna[i2]);
         }
         public void BtnKlikSlovo(object sender) // Kliknut buttton u aplikacji, prosledjuje se slovo
         {
             Button dugme = sender as Button;
-            char slovo = (char)dugme.Content;
+            char[] pom = sender.ToString().ToCharArray();
+            char slovo = pom[pom.Length - 1];
+            Izlazna[slovo-'A'].Dugme = dugme;
             KlikSlovo(slovo);
-            int idBoje = Izlazna[slovo - 'A'].idBoje;
+            /*
+            int idBoje = Izlazna[slovo - 'A'].IdBoje;
             if (idBoje == -1) // ne treba da bude obojen
-                dugme.Background = new SolidColorBrush(Color.FromArgb(0, 0, 0, 0)); // siva/crna?
+                dugme.Background = new SolidColorBrush(Color.FromArgb(255, 255, 255, 255));
             else
                 dugme.Background = new SolidColorBrush(bojeSlova[idBoje].boja);
+            */
+            //Button parDugme = Izlazna[];
         }
         public char Sifruj(char x, bool smer = false) // vraca slovo koje je spojeno sa unetim slovom
         {
-            return Izlazna[x - 'A'].slovo=='.'?(char)(x+'A'): Izlazna[x - 'A'].slovo;
+            return Izlazna[x - 'A'].Slovo=='.'?(char)(x+'A'): Izlazna[x - 'A'].Slovo;
         }
 
         protected override void NacrtajElement(Canvas C)
@@ -109,12 +162,12 @@ namespace Enigma
         {
             NacrtajElement(C);
         }
-        private char[] ParsirajIzlazniNiz((char,int)[] izlazna)
+        private char[] ParsirajIzlazniNiz(PlugSlovo[] izlazna)
         {
             char[] x = new char[izlazna.Length];
             for (int i = 0; i < x.Length; i++)
-                if (izlazna[i].Item1 == '.') x[i] = (char)('A' + i);
-                else x[i] = Izlazna[i].Item1;
+                if (izlazna[i].Slovo == '.') x[i] = (char)('A' + i);
+                else x[i] = Izlazna[i].Slovo;
             return x;
         }
     }

@@ -216,13 +216,7 @@ namespace Enigma
 
         private void Spoji(object sender, RoutedEventArgs e)
         {
-            char[] pom = sender.ToString().ToCharArray();
-            Button s = (Button)sender;
-            trenutnoSlovoPlug = pom[pom.Length - 1];
-            s.Background = boje[brojacBoja / 2];
-            brojacBoja++;
-            //plugboard.KlikSlovo(trenutnoSlovoPlug);
-            Oboj(trenutnoSlovoPlug);
+            plugboard.BtnKlikSlovo(sender);
         }
         private void KoraciSifrovanja(object sender, RoutedEventArgs e)
         {
