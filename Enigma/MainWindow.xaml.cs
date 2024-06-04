@@ -226,6 +226,7 @@ namespace Enigma
             this.Visibility = Visibility.Hidden;
             animacija.ShowDialog();
             this.Visibility = Visibility.Visible;
+            Iscrtaj();
         }
 
         private void OtvaranjeObjasnjenja(object sender, RoutedEventArgs e)
